@@ -118,6 +118,12 @@ body {
     display:none;
  }
 
+ .nexusModal {
+
+  max-height:950px !important;
+
+ }
+
  .carousel-control {
   top:150px !important;
  }
@@ -191,13 +197,14 @@ $sql=mysql_query("SELECT * FROM instagram_images ORDER BY up DESC;");
 ?>
 <div class="page-header">
 <h1>Miami University Libraries' Instagram Contest</h1>
-<ol>
+<ul>
 <li>Snap cool pictures of the libraries using Instagram.</li>
 <li>Apply the hashtag <strong>#mohlibinstagram</strong>.</li>
-<li>Vote on your favorites!</li>
+<li>Vote on your favorites @ www.lib.miamioh.edu/instagram-contest</li>
 <li>Top vote getter wins a <a href="#nexusModal" data-toggle="modal"><strong>Nexus 7</strong>!!</a></li>
-<li>Images may get displayed in the libraries!</li>
-</ol>
+<li>Images may be printed and displayed in the libraries!</li>
+<li>Contest ends October 13th.</li>
+</ul>
 </div>
 
 <div id="nexusModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="nexusModalLabel" aria-hidden="true">
@@ -205,7 +212,7 @@ $sql=mysql_query("SELECT * FROM instagram_images ORDER BY up DESC;");
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="nexusModalLabel">Nexus 7</h3>
   </div>
-  <div class="modal-body">
+  <div class="modal-body nexusModal">
     <img class="img-polaroid" src="files/img/nexus7.jpg" />
     <h3>Nexus 7 (16GB)</h3>
     <p><strong>Powerful, portable and made for what matters to you.</strong></p>
@@ -236,7 +243,7 @@ $down=$row['down'];
 <div id="<?php echo $entry_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-    <h3 id="myModalLabel"><?php echo $entry_id; ?></h3>
+    <h5 id="myModalLabel"><?php echo $caption ?></h5>
   </div>
   <div class="modal-body">
     <p><img src="<?php echo $standard; ?>" /></p>
