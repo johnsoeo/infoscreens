@@ -114,6 +114,12 @@ body {
     display:none;
  }
 
+#news_and_notes a:link {
+  pointer-events:none;
+  cursor:default;
+
+}
+ 
  #flickr {
     display:none;
  }
@@ -130,11 +136,22 @@ body {
 
 iframe {
   position: fixed;
-  top: 100px;
+  top: 200px;
   width: 1300px;
   height: 1000px;
   left: 350px;
   border: none;
+}
+
+.page-header h1 {
+
+  padding-top:60px;
+
+}
+
+.page-header {
+
+  padding-bottom:50px !important;
 }
 </style>
 </head>
@@ -148,7 +165,7 @@ iframe {
     <button class="btn btn-large btn-inverse menuButton new_tech">New Technology</button>
     <button class="btn btn-large btn-inverse menuButton instagram">Instagram Contest!!</button>
     <button class="btn btn-large btn-inverse menuButton news_and_notes">Library News & Events</button>
-    <button class="btn btn-large btn-inverse menuButton flickr">Pictures from Old Miami</button>
+    <button class="btn btn-large btn-inverse menuButton flickr">Historical Images of Miami U.</button>
  
  
 </div>
@@ -169,6 +186,7 @@ iframe {
 </div>
 <div id="new_tech">
 <div class="page-header">
+        <img class="pull-right" src="files/img/social-media-icon-large.png" />
         <h1>New Technology <small> provided by the Miami University Libraries</small></h1>
         </div> 
       <div class="hero-unit">
@@ -196,7 +214,7 @@ include('../../apis/instagram/connect.php');
 $sql=mysql_query("SELECT * FROM instagram_images ORDER BY up DESC;");
 ?>
 <div class="page-header">
-<h1>Miami University Libraries' Instagram Contest</h1>
+<h1>Miami University Libraries' Instagram Contest<img class="pull-right" src="files/img/social-media-icon-large.png" /></h1>
 <ul>
 <li>Snap cool pictures of the libraries using Instagram.</li>
 <li>Apply the hashtag <strong>#mohlibinstagram</strong>.</li>
@@ -268,6 +286,7 @@ $down=$row['down'];
 <div id="news_and_notes">
 <div class="container">
   <div class="page-header">
+    <img class="no-action pull-right" src="files/img/social-media-icon-large.png" />
     <h1>News & Notes <small>a blog</small></h1>
   </div>
 <?php include '../../apis/drupal/news_and_notes.php'; ?>
@@ -277,7 +296,8 @@ $down=$row['down'];
 <div id="flickr">
 <div class="container">
   <div class="page-header">
-    <h1>Pictures from Old Miami <small>Football</small></h1>
+    <img class="pull-right" src="files/img/social-media-icon-large.png" />
+    <h1>Est. 1809 <small>Historical Images of Miami University</small></h1>
   </div>
 <?php include '../flickr/flickr_presenter/flickr.php'; ?>
 </div>
@@ -287,6 +307,7 @@ $down=$row['down'];
 <div id="map">
 <div class="container">
   <div class="page-header">
+    <img class="pull-right" src="files/img/social-media-icon-large.png" />
     <h1>Computer Availability Maps<small>  Digital Den, BEST Library </small></h1>
   </div>
 <iframe scrolling="no" src="http://staff.lib.muohio.edu/~cameroj3/webtests/ajax/labtest/"></iframe>
@@ -314,7 +335,7 @@ $down=$row['down'];
               <li><button class="btn new_tech" type="button">New Tech</button></li>
               <li><button class="btn instagram" type="button">Instagram Contest!</button></li>
               <li><button class="btn news_and_notes" type="button">News & Events from the Library</button></li>
-              <li><button class="btn flickr" type="button">Pictures from Old Miami</button></li>
+              <li><button class="btn flickr" type="button">Historical Images of Miami U.</button></li>
             </ul> 
             <ul id="adaBookMenu" class="nav nav-pills">
               <li><button class="btn" type="button">New Books</button></li>
@@ -597,15 +618,18 @@ $(".map").click( function() {
 $("iframe","#news_and_notes").css("display","none");
 $("img","#news_and_notes").addClass("img-polaroid");
 $("img","#news_and_notes").css("margin","10px");
-$("#news_and_notes").find("img:odd",".hero-unit").css("float","right");
-$("#news_and_notes").find("img:even",".hero-unit").css("float","left");
-$("#news_and_notes").find("img:odd",".hero-unit").css("clear","right");
-$("#news_and_notes").find("img:even",".hero-unit").css("clear","left");
+$("#news_and_notes").find("img:odd",".hero-unit").css("float","left");
+$("#news_and_notes").find("img:even",".hero-unit").css("float","right");
+$("#news_and_notes").find("img:odd",".hero-unit").css("clear","left");
+$("#news_and_notes").find("img:even",".hero-unit").css("clear","right");
 $("#news_and_notes").find("img:last",".hero-unit").css("clear","both");
 $("#news_and_notes").find(".hero-unit").css("overflow","hidden");
 $('.carousel').carousel();
 $("img",".carousel-inner").css("margin-left","auto");
 $("img",".carousel-inner").css("margin-right","auto");
+$("img.no-action").css("float","right");
+$("img.no-action").css("margin","0");
+$("img.no-action").removeClass("img-polaroid");
 
 
 });
