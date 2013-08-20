@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
-  <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
-  <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
-  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-  <script src="bootstrap/js/bootstrap.js"></script>
-<title>MUisHere</title>
   <script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>
   <script>var cord = [
       ['<div id="content">'+
@@ -458,10 +447,7 @@ function zoomInternational() {
 }
 </script>
 
-<style type="text/css">
-/*body{
-    overflow: hidden;
-}*/
+<style>
 #abstract{
   padding: 1%;
   font-size: 20px;
@@ -478,54 +464,14 @@ function zoomInternational() {
     box-shadow:0px 0px 4px 3px rgba(68,85,102,0.9);
 }
 
-/*.button {
-max-width: 180px;
-   border-top: 1px solid #96d1f8;
-   background: #65a9d7;
-   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
-   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
-   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
-   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
-   background: -o-linear-gradient(top, #3e779d, #65a9d7);
-   padding: 12px 30px;
-   -webkit-border-radius: 12px;
-   -moz-border-radius: 12px;
-   border-radius: 12px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: white;
-   font-size: 20px;
-   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
-   text-decoration: none;
-   vertical-align: middle;
-   }
-.button:hover {
-   border-top-color: #28597a;
-   background: #28597a;
-   color: #ccc;
-
-   }
-.button:active {
-   border-top-color: #1b435e;
-   background: #1b435e;
-   }
-*/
 </style>
 
-</head>
-<body onload="initialize()">
 <div class="container">
-      <h1>Miami University Research Efforts Around the World</h1>
-<div id="map_canvas"></div>
-<div id="controls">
-    <button id="Local" class="button" onmouseover="zoomLocal()">Local Research</button>
-    <button id="Regional" class="button" onmouseover="zoomRegional()">Regional Research</button><br>
-    <button id="National" class="button" onmouseover="zoomNational()">National Research</button>
-    <button id="International" class="button" onmouseover="zoomInternational()">International Research</button>
-</div>
+  <div class="page-header">
+  <img class="pull-right" src="files/img/social-media-icon-large.png" />
+  <h1>Miami University Research Efforts Around the World</h1>
+  </div>
+<div id="map_canvas" class="img-polaroid"></div>
+
 <div id="abstract"></div>
 </div>
-</body>
-</html>

@@ -38,19 +38,21 @@ body {
 
 .menu1 {
   z-index: 300;
-  background-color:#202020;
+  background-color:#181818;
 }
 .menu2 {
   z-index: 200;
-  background-color:#282828;
-  opacity:0.98;
+  background-color:#181818;
 }
 .menu3 {
   z-index: 100;
-  background-color:#303030;
-  opacity:0.97;
+  background-color:#181818;
 }
 
+.menu4 {
+  z-index: 100;
+  background-color:#181818;
+}
 .menuButton {
   width: 100%;
 }
@@ -68,6 +70,10 @@ body {
   -webkit-transform: translate3d(600px, 0, 0); 
 }
 
+.menuIn4 {
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: translate3d(400px, 0, 0); 
+}
 #adaMenu {
     display:none;
     }
@@ -80,12 +86,15 @@ body {
   display:none;
 }
 
-#adaMenu, #adaBookMenu, #adaMapsMenu {
+#adaMUIHMenu {
+  display:none;
+}
+#adaMenu, #adaBookMenu, #adaMapsMenu, #adaMUIHMenu {
   margin-top:5px;
   margin-left:5px;
 }
 
-#adaMenu button, #adaBookMenu button, #adaMapsMenu button {
+#adaMenu button, #adaBookMenu button, #adaMapsMenu button, #adaMUIHMenu button {
   margin:2px;
   margin:2px;
 }
@@ -121,6 +130,10 @@ body {
 }
  
  #flickr {
+    display:none;
+ }
+
+ #muishere {
     display:none;
  }
 
@@ -166,8 +179,7 @@ iframe {
     <button class="btn btn-large btn-inverse menuButton instagram">Instagram Contest!!</button>
     <button class="btn btn-large btn-inverse menuButton news_and_notes">Library News & Events</button>
     <button class="btn btn-large btn-inverse menuButton flickr">Historical Images of Miami U.</button>
- 
- 
+    <button class="btn btn-large btn-inverse menuButton research muishere localResearch">Map of MU Research</button>
 </div>
   
 <div class="menu menu2">
@@ -182,6 +194,13 @@ iframe {
       <button class="btn btn-large btn-inverse menuButton">CIM</button>    
       <button class="btn btn-large btn-inverse menuButton">Kamm</button>
       <button class="btn btn-large btn-inverse menuButton">Second Floor</button>
+</div>
+<div class="menu menu4">
+    <button class="btn btn-large btn-danger menuButton back"><i class="icon-circle-arrow-left pull-left"></i>Back</button>
+    <button class="btn btn-large btn-inverse menuButton localResearch">Local Research</button>
+    <button class="btn btn-large btn-inverse menuButton regionalResearch">Regional Research</button>
+    <button class="btn btn-large btn-inverse menuButton nationalResearch">National Research</button>    
+    <button class="btn btn-large btn-inverse menuButton internationalResearch">International Research</button>
 </div>
 </div>
 <div id="new_tech">
@@ -303,6 +322,9 @@ $down=$row['down'];
 </div>
 </div>
 
+<div id ="muishere">
+<?php include 'content/muishere.php'; ?>
+</div>
 
 <div id="map">
 <div class="container">
@@ -336,6 +358,7 @@ $down=$row['down'];
               <li><button class="btn instagram" type="button">Instagram Contest!</button></li>
               <li><button class="btn news_and_notes" type="button">News & Events from the Library</button></li>
               <li><button class="btn flickr" type="button">Historical Images of Miami U.</button></li>
+              <li><button class="btn muishere adaMUIHMenu localResearch" type="button">Map of MU Research</button></li>
             </ul> 
             <ul id="adaBookMenu" class="nav nav-pills">
               <li><button class="btn" type="button">New Books</button></li>
@@ -344,7 +367,13 @@ $down=$row['down'];
             <ul id="adaMapsMenu" class="nav nav-pills">
               <li><button class="btn" type="button">King</button></li>
               <li><button class="btn" type="button">BEST</button></li>
-            </ul> 
+            </ul>
+            <ul id="adaMUIHMenu" class="nav nav-pills">
+              <li><button class="btn localResearch" type="button">Local Research</button></li>
+              <li><button class="btn regionalResearch" type="button">Regional Research</button></li>
+              <li><button class="btn nationalResearch" type="button">National Research</button></li>
+              <li><button class="btn internationalResearch" type="button">International Research</button></li>
+            </ul>
    </div>
 </div>
 <!--<button id="menuButton" class="btn btn-large btn-inverse openMenu">MENU</button>-->
@@ -357,6 +386,8 @@ $(".openMenu").click (function() {
   $(".menu1").removeClass("menuIn1");
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3"); 
+  $(".menu4").removeClass("menuIn4"); 
+ 
   } 
 
   else {
@@ -386,9 +417,39 @@ $(".maps").click( function() {
   $("#adaMenu").find("button","#king").removeClass("btn-inverse");
   $("#adaMenu").find("button",".new_tech").removeClass("btn-inverse");
   $("#adaMenu").find("button",".flickr").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".internationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".localResearch").removeClass("btn-inverse");
 
 });
 
+$(".research").click( function() {
+  $(".menu4").addClass("menuIn4");
+  $(".research:button").addClass("btn-primary");
+  $(".research:button").removeClass("btn-inverse");
+  $(".new_tech:button").addClass("btn-inverse");
+  $(".new_tech:button").removeClass("btn-primary");
+  $(".instagram:button").addClass("btn-inverse");
+  $(".instagram:button").removeClass("btn-primary");
+  $("#king:button").addClass("btn-inverse");
+  $("#king:button").removeClass("btn-primary");
+  $(".news_and_notes:button").addClass("btn-inverse");
+  $(".news_and_notes:button").removeClass("btn-primary");
+  $(".closeMenu:button").html('Close Menus'); 
+  $(".flickr:button").addClass("btn-inverse");
+  $(".flickr:button").removeClass("btn-primary"); 
+  $("#adaMenu").find("button",".instagram").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".news_and_notes").removeClass("btn-inverse");
+  $("#adaMenu").find("button","#king").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".new_tech").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".flickr").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".internationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".localResearch").removeClass("btn-inverse");
+
+});
 $(".closeMenu").click( function() {
 
   $(".closeMenu:button").html('Close Menu');
@@ -414,10 +475,15 @@ $("#king").click (function() {
   $("#adaMenu").find("button",".news_and_notes").removeClass("btn-inverse");
   $("#adaMenu").find("button",".new_tech").removeClass("btn-inverse");
   $("#adaMenu").find("button",".flickr").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".internationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".localResearch").removeClass("btn-inverse");
+
 });
 
 $(".back").click( function() {
-    $(this).parent().removeClass("menuIn menuIn2 menuIn3");
+    $(this).parent().removeClass("menuIn menuIn2 menuIn3 menuIn4");
 });
 
 $(".closeMenu").click( function() {
@@ -425,14 +491,18 @@ $(".closeMenu").click( function() {
   $(".menu1").removeClass("menuIn1");
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3");
+  $(".menu4").removeClass("menuIn4");
 
 });
+
 $(".ada").click( function() {
 
   if ($("#adaMenu").css("display") == "none") {
     $("#adaMenu").css("display","block");
     $("#adaBookMenu").css("display","none");
     $("#adaMapsMenu").css("display","none");
+    $("#adaMUIHMenu").css("display","none");
+
      
   } 
   
@@ -440,11 +510,11 @@ $(".ada").click( function() {
     $("#adaMenu").css("display","none");
     $("#adaBookMenu").css("display","none");
     $("#adaMapsMenu").css("display","none");
+    $("#adaMUIHMenu").css("display","none");
  
   }  
 
 
-  console.log($("#adaMenu").css("display"));
 });
 
 
@@ -454,6 +524,19 @@ $(".adaBook").click( function() {
     $("#adaBookMenu").css("display","block");
     $("#adaMenu").css("display","none");
     $("#adaMapsMenu").css("display","none");
+    $("#adaMUIHMenu").css("display","none");
+ 
+  } 
+  
+});
+
+$(".adaMUIHMenu").click( function() {
+
+  if ($("#adaMUIHMenu").css("display") == "none") {
+    $("#adaMUIHMenu").css("display","block");
+    $("#adaMenu").css("display","none");
+    $("#adaMapsMenu").css("display","none");
+    $("#adaBookMenu").css("display","none");
  
   } 
   
@@ -465,10 +548,9 @@ $(".mapMenu").click( function() {
     $("#adaMapsMenu").css("display","block");
     $("#adaMenu").css("display","none");
     $("#adaBookMenu").css("display","none");
+    $("#adaMUIHMenu").css("display","none");
  
   } 
- 
-  
 
 });
 
@@ -481,6 +563,7 @@ $(".new_tech").click( function() {
     $("#map").css("display","none");
     $("#news_and_notes").css("display","none");
     $("#flickr").css("display","none");
+    $("#muishere").css("display","none");
  
    } 
   
@@ -497,14 +580,18 @@ $(".new_tech").click( function() {
   $(".menu1").removeClass("menuIn1");
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3");
+  $(".menu4").removeClass("menuIn4");
   $(".flickr:button").addClass("btn-inverse");
   $(".flickr:button").removeClass("btn-primary");
+  $(".muishere:button").addClass("btn-inverse");
+  $(".muishere:button").removeClass("btn-primary");
   $("#adaMenu").find("button",".instagram").removeClass("btn-inverse");
   $("#adaMenu").find("button",".maps").removeClass("btn-inverse");
   $("#adaMenu").find("button","#king").removeClass("btn-inverse");
   $("#adaMenu").find("button",".news_and_notes").removeClass("btn-inverse");
   $("#adaMenu").find("button",".flickr").removeClass("btn-inverse");
-
+  $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
+  $("#adaMUIHMenu").css("display","none");
 });
 
 $(".instagram").click( function() {
@@ -515,7 +602,8 @@ $(".instagram").click( function() {
     $("#map").css("display","none");
     $("#news_and_notes").css("display","none");
     $("#flickr").css("display","none");
-  } 
+    $("#muishere").css("display","none");
+} 
   $(".instagram:button").addClass("btn-primary");
   $(".instagram:button").removeClass("btn-inverse");
   $(".maps:button").addClass("btn-inverse");
@@ -529,13 +617,18 @@ $(".instagram").click( function() {
   $(".menu1").removeClass("menuIn1");
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3"); 
+  $(".menu4").removeClass("menuIn4"); 
   $(".flickr:button").addClass("btn-inverse");
   $(".flickr:button").removeClass("btn-primary");
+  $(".muishere:button").addClass("btn-inverse");
+  $(".muishere:button").removeClass("btn-primary");
   $("#adaMenu").find("button",".news_and_notes").removeClass("btn-inverse");
   $("#adaMenu").find("button",".maps").removeClass("btn-inverse");
   $("#adaMenu").find("button","#king").removeClass("btn-inverse");
   $("#adaMenu").find("button",".new_tech").removeClass("btn-inverse"); 
   $("#adaMenu").find("button",".flickr").removeClass("btn-inverse"); 
+  $("#adaMenu").find("button",".muishere").removeClass("btn-inverse"); 
+  $("#adaMUIHMenu").css("display","none");
 
 });
 
@@ -547,7 +640,8 @@ $(".news_and_notes").click( function() {
     $("#map").css("display","none");
     $("#instagram").css("display","none");
     $("#flickr").css("display","none");
-  } 
+    $("#muishere").css("display","none");
+ } 
   $(".instagram:button").addClass("btn-inverse");
   $(".instagram:button").removeClass("btn-primary");
   $(".maps:button").addClass("btn-inverse");
@@ -556,11 +650,14 @@ $(".news_and_notes").click( function() {
   $(".new_tech:button").removeClass("btn-primary");
   $(".flickr:button").addClass("btn-inverse");
   $(".flickr:button").removeClass("btn-primary");
+  $(".muishere:button").addClass("btn-inverse");
+  $(".muishere:button").removeClass("btn-primary");
   $("#adaMenu").find("button",".instagram").removeClass("btn-inverse");
   $("#adaMenu").find("button",".maps").removeClass("btn-inverse");
   $("#adaMenu").find("button","#king").removeClass("btn-inverse");
   $("#adaMenu").find("button",".new_tech").removeClass("btn-inverse");
   $("#adaMenu").find("button",".flickr").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
   $("#king:button").addClass("btn-inverse");
   $("#king:button").removeClass("btn-primary"); 
   $(".news_and_notes:button").addClass("btn-primary");
@@ -568,6 +665,8 @@ $(".news_and_notes").click( function() {
   $(".menu1").removeClass("menuIn1");
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3");
+  $(".menu4").removeClass("menuIn4");
+  $("#adaMUIHMenu").css("display","none");
 
 });
 
@@ -579,7 +678,49 @@ $(".flickr").click( function() {
     $("#map").css("display","none");
     $("#instagram").css("display","none");
     $("#news_and_notes").css("display","none");
-  } 
+    $("#muishere").css("display","none");
+} 
+  
+  $(".instagram:button").addClass("btn-inverse");
+  $(".instagram:button").removeClass("btn-primary");
+  $(".maps:button").addClass("btn-inverse");
+  $(".maps:button").removeClass("btn-primary"); 
+  $(".new_tech:button").addClass("btn-inverse");
+  $(".new_tech:button").removeClass("btn-primary");
+  $(".news_and_notes:button").addClass("btn-inverse");
+  $(".news_and_notes:button").removeClass("btn-primary");
+  $(".muishere:button").addClass("btn-inverse");
+  $(".muishere:button").removeClass("btn-primary");
+  $("#adaMenu").find("button",".instagram").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".maps").removeClass("btn-inverse");
+  $("#adaMenu").find("button","#king").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".new_tech").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".news_and_notes").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
+  $("#king:button").addClass("btn-inverse");
+  $("#king:button").removeClass("btn-primary"); 
+  $(".flickr:button").addClass("btn-primary");
+  $(".flickr:button").removeClass("btn-inverse"); 
+  $(".menu1").removeClass("menuIn1");
+  $(".menu2").removeClass("menuIn2");
+  $(".menu3").removeClass("menuIn3");
+  $(".menu4").removeClass("menuIn4");
+
+  $("#adaMUIHMenu").css("display","none");
+
+});
+
+$(".muishere").click( function() {
+
+  if ($("#muishere").css("display") == "none") {
+    $("#muishere").css("display","block");
+    $("#new_tech").css("display","none"); 
+    $("#map").css("display","none"); 
+    $("#instagram").css("display","none"); 
+    $("#news_and_notes").css("display","none"); 
+    $("#flickr").css("display","none"); 
+    
+    } 
   
   $(".instagram:button").addClass("btn-inverse");
   $(".instagram:button").removeClass("btn-primary");
@@ -596,11 +737,15 @@ $(".flickr").click( function() {
   $("#adaMenu").find("button",".news_and_notes").removeClass("btn-inverse");
   $("#king:button").addClass("btn-inverse");
   $("#king:button").removeClass("btn-primary"); 
-  $(".flickr:button").addClass("btn-primary");
-  $(".flickr:button").removeClass("btn-inverse"); 
+  $(".flickr:button").addClass("btn-inverse");
+  $(".flickr:button").removeClass("btn-primary"); 
+  $(".muishere:button").addClass("btn-primary");
+  $(".muishere:button").removeClass("btn-inverse"); 
   $(".menu1").removeClass("menuIn1");
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3");
+  $("#adaMenu").find("button",".flickr").removeClass("btn-inverse");
+
 });
 
 $(".map").click( function() {
@@ -612,7 +757,67 @@ $(".map").click( function() {
     $("#news_and_notes").css("display","none");
     $("#flickr").css("display","none");
    } 
-  
+ 
+});
+
+$(".localResearch").click( function() {
+
+  zoomLocal(); 
+  $(".localResearch:button").addClass("btn-primary");
+  $(".localResearch:button").removeClass("btn-inverse");
+  $(".regionalResearch:button").removeClass("btn-primary").addClass("btn-inverse");  
+  $(".nationalResearch:button").removeClass("btn-primary").addClass("btn-inverse");  
+  $(".internationalResearch:button").removeClass("btn-primary").addClass("btn-inverse");  
+  $("#adaMUIHMenu").find("button",".internationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".localResearch").removeClass("btn-inverse");
+
+});
+
+$(".regionalResearch").click( function() {
+
+    zoomRegional(); 
+  $(".regionalResearch:button").addClass("btn-primary");
+  $(".regionalResearch:button").removeClass("btn-inverse");
+  $(".localResearch:button").removeClass("btn-primary").addClass("btn-inverse");  
+  $(".nationalResearch:button").removeClass("btn-primary").addClass("btn-inverse");  
+  $(".internationalResearch:button").removeClass("btn-primary").addClass("btn-inverse");  
+  $("#adaMUIHMenu").find("button",".internationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".localResearch").removeClass("btn-inverse");
+ 
+});
+
+$(".nationalResearch").click( function() {
+
+    zoomNational(); 
+  $(".nationalResearch:button").addClass("btn-primary");
+  $(".nationalResearch:button").removeClass("btn-inverse");
+  $(".regionalResearch:button").removeClass("btn-primary").addClass("btn-inverse");  
+  $(".localResearch:button").removeClass("btn-primary").addClass("btn-inverse");  
+  $(".internationalResearch:button").removeClass("btn-primary").addClass("btn-inverse");  
+  $("#adaMUIHMenu").find("button",".internationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".localResearch").removeClass("btn-inverse");
+ 
+});
+
+$(".internationalResearch").click( function() {
+
+    zoomInternational(); 
+  $(".internationalResearch:button").addClass("btn-primary");
+  $(".internationalResearch:button").removeClass("btn-inverse");
+  $(".regionalResearch:button").removeClass("btn-primary").addClass("btn-inverse");  
+  $(".nationalResearch:button").removeClass("btn-primary").addClass("btn-inverse");  
+  $(".localResearch:button").removeClass("btn-primary").addClass("btn-inverse");  
+  $("#adaMUIHMenu").find("button",".internationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".localResearch").removeClass("btn-inverse");
+ 
 });
 
 $("iframe","#news_and_notes").css("display","none");
