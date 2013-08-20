@@ -418,6 +418,8 @@ $(".maps").click( function() {
   $("#adaMenu").find("button","#king").removeClass("btn-inverse");
   $("#adaMenu").find("button",".new_tech").removeClass("btn-inverse");
   $("#adaMenu").find("button",".flickr").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".muishere").removeClass("btn-primary");
   $("#adaMUIHMenu").find("button",".internationalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
@@ -447,6 +449,7 @@ $(".research").click( function() {
   $("#adaMenu").find("button","#king").removeClass("btn-inverse");
   $("#adaMenu").find("button",".new_tech").removeClass("btn-inverse");
   $("#adaMenu").find("button",".flickr").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".internationalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
@@ -478,6 +481,7 @@ $("#king").click (function() {
   $("#adaMenu").find("button",".news_and_notes").removeClass("btn-inverse");
   $("#adaMenu").find("button",".new_tech").removeClass("btn-inverse");
   $("#adaMenu").find("button",".flickr").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".internationalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
@@ -759,6 +763,8 @@ $(".map").click( function() {
     $("#instagram").css("display","none");
     $("#news_and_notes").css("display","none");
     $("#flickr").css("display","none");
+    $("#muishere").css("display","none");
+ 
    } 
  
 });
@@ -775,7 +781,8 @@ $(".localResearch").click( function() {
   $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".localResearch").removeClass("btn-inverse");
-
+  $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
+ 
 });
 
 $(".regionalResearch").click( function() {
@@ -790,6 +797,7 @@ $(".regionalResearch").click( function() {
   $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".localResearch").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
  
 });
 
@@ -805,6 +813,7 @@ $(".nationalResearch").click( function() {
   $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".localResearch").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
  
 });
 
@@ -820,6 +829,7 @@ $(".internationalResearch").click( function() {
   $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".localResearch").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
  
 });
 
