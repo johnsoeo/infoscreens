@@ -399,6 +399,7 @@ $(".openMenu").click (function() {
 
 $(".maps").click( function() {
   $(".menu2").addClass("menuIn2");
+  $(".menu4").removeClass("menuIn4");
   $(".maps:button").addClass("btn-primary");
   $(".maps:button").removeClass("btn-inverse");
   $(".new_tech:button").addClass("btn-inverse");
@@ -421,7 +422,9 @@ $(".maps").click( function() {
   $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
   $("#adaMUIHMenu").find("button",".localResearch").removeClass("btn-inverse");
-
+  $(".research:button").addClass("btn-inverse");
+  $(".research:button").removeClass("btn-primary");
+ 
 });
 
 $(".research").click( function() {
