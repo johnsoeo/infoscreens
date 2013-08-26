@@ -15,6 +15,7 @@ body {
   margin: 0;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+  background-color:#FCFFF9;
 }
 
 .canvas {
@@ -622,7 +623,7 @@ $(".maps").click( function() {
  
   $(".research:button").addClass("btn-inverse");
   $(".research:button").removeClass("btn-primary");
- 
+  $("#adaMUIHMenu").css("display","none"); 
 });
 
 $(".research").click( function() {
