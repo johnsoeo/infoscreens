@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Test</title>
+<title>Dataviz Interface | Miami University Libraries</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="7200; URL=http://dog.lib.miamioh.edu/~jpmichel/dataviz/cam_model">
       <meta charset="UTF-8">
       <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
       <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
@@ -325,7 +326,7 @@ To get started, search for “BrowZine” in the app stores (Apple, Google, Amaz
 <div class="container">
 <?php
 include('../../apis/instagram/connect.php');
-$sql=mysql_query("SELECT * FROM instagram_images ORDER BY up DESC;");
+$sql=mysql_query("SELECT * FROM instagram_images WHERE entry_id NOT IN (1989,1988) ORDER BY up DESC;");
 ?>
 <div class="page-header">
 <h1>Miami University Libraries' Instagram Contest<img class="pull-right" src="files/img/social-media-icon-large.png" /></h1>
@@ -335,7 +336,7 @@ $sql=mysql_query("SELECT * FROM instagram_images ORDER BY up DESC;");
 <li>Vote on your favorites @ www.lib.miamioh.edu/instagram-contest</li>
 <li>Top vote getter wins a <a href="#nexusModal" data-toggle="modal"><strong>Nexus 7</strong>!!</a></li>
 <li>Images may be printed and displayed in the libraries!</li>
-<li>Contest ends October 13th.</li>
+<li>Contest ends October 13th/14th @ Midnight. Winner will be announced Monday, October 14th @ 11am.</li>
 </ul>
 </div>
 
@@ -1615,6 +1616,5 @@ $("img.no-action").removeClass("img-polaroid");
 
 <script type="text/javascript" src="js/paper.js"></script>
 <script type="text/paperscript" canvas="canvas-1" src="js/img-raster.js"></script>
-
 </body>
 </html>
