@@ -121,67 +121,74 @@ top:200px;
 
   }
 
-  #new_tech {
-    display:block;
-  }
+//  #new_tech {
+//    display:block;
+//  }
 
-  #mystery {
+// rotation display css
+div.new_tech {
+
+  display:none;
+}
+
+
+  div.mystery {
 
     display:none;
 
   }
 
-  #instagram {
+  div.instagram {
     display:none;
   }
 
-  #kingGround {
+  div.kingGround {
     display:none;
   }
  
-  #kingFirst {
+  div.kingFirst {
     display:none;
   }
 
-#kingSecond {
+div.kingSecond {
     display:none;
   }
 
-#cim {
+div.cim {
     display:none;
   } 
 
-#kamm {
+div.kamm {
     display:none;
   }
 
-#art {
+div.art {
     display:none;
   }
 
-#music {
+div.music {
     display:none;
   }
 
-#news_and_notes {
+div.news_and_notes {
     display:none;
  }
 
-#news_and_notes a:link {
+div.news_and_notes a:link {
   pointer-events:none;
   cursor:default;
 
 }
  
- #flickr {
+ div.flickr {
     display:none;
  }
 
-#flickr-promotion {
+div.flickr-promotion {
     display:none;
  } 
 
- #muishere {
+ div.muishere {
     display:none;
  }
 
@@ -264,7 +271,7 @@ iframe {
     <button class="btn btn-large btn-inverse menuButton internationalResearch">International Research</button>
 </div>
 </div>
-<div id="new_tech">
+<div class="content new_tech">
 <div class="page-header">
         <img class="pull-right" src="files/img/social-media-icon-large.png" />
         <h1>New Technology <small> provided by the Miami University Libraries</small></h1>
@@ -301,7 +308,8 @@ To get started, search for “BrowZine” in the app stores (Apple, Google, Amaz
       <p>10 new Windows 8 touch screen PCs have been set up between King & BEST. Check out these sweet new machines!</p> 
       </div>
       </div>
-<div id="mystery">
+
+<div class="content mystery">
   <div class="container">
     <div class="page-header">
       <h1>Mystery Person <small>Touch and Drag to Reveal!</small><a href="#paperModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">Reveal Mystery Person</a>
@@ -322,7 +330,7 @@ To get started, search for “BrowZine” in the app stores (Apple, Google, Amaz
     </div>
   </div>
 </div>
-<div id="instagram">
+<div class="content instagram">
 <div class="container">
 <?php
 include('../../apis/instagram/connect.php');
@@ -398,7 +406,7 @@ $down=$row['down'];
 </div>
 </div>
 </div>
-<div id="news_and_notes">
+<div class="content news_and_notes">
 <div class="container">
   <div class="page-header">
     <img class="no-action pull-right" src="files/img/social-media-icon-large.png" />
@@ -408,7 +416,7 @@ $down=$row['down'];
 </div>
 </div>
 
-<div id="flickr">
+<div class="content flickr">
 <div class="container">
   <div class="page-header">
     <img class="pull-right" src="files/img/social-media-icon-large.png" />
@@ -419,7 +427,7 @@ $down=$row['down'];
 </div>
 
 <!-- Flickr Promotion Div -->
-<div id="flickr-promotion">
+<div class="content flickr-promotion">
 <div class="container">
   <div class="page-header">
     <img class="pull-right" src="files/img/social-media-icon-large.png" />
@@ -431,11 +439,11 @@ $down=$row['down'];
 </div>
 
 
-<div id ="muishere">
+<div class="content muishere">
 <?php include 'content/muishere.php'; ?>
 </div>
 
-<div id="kingGround">
+<div class="content kingGround">
   <div class="container">
     <div class="page-header">
       <img class="pull-right" src="files/img/social-media-icon-large.png" />
@@ -445,7 +453,7 @@ $down=$row['down'];
   </div>
 </div>
 
-<div id="kingFirst">
+<div class="content kingFirst">
   <div class="container">
     <div class="page-header">
       <img class="pull-right" src="files/img/social-media-icon-large.png" />
@@ -455,7 +463,7 @@ $down=$row['down'];
   </div>
 </div>
 
-<div id="kingSecond">
+<div class="content kingSecond">
   <div class="container">
     <div class="page-header">
       <img class="pull-right" src="files/img/social-media-icon-large.png" />
@@ -465,7 +473,7 @@ $down=$row['down'];
   </div>
 </div>
 
-<div id="cim">
+<div class="content cim">
   <div class="container">
     <div class="page-header">
       <img class="pull-right" src="files/img/social-media-icon-large.png" />
@@ -475,7 +483,7 @@ $down=$row['down'];
   </div>
 </div>
 
-<div id="kamm">
+<div class="content kamm">
   <div class="container">
     <div class="page-header">
       <img class="pull-right" src="files/img/social-media-icon-large.png" />
@@ -485,7 +493,7 @@ $down=$row['down'];
   </div>
 </div>
 
-<div id="art">
+<div class="content art">
   <div class="container">
     <div class="page-header">
       <img class="pull-right" src="files/img/social-media-icon-large.png" />
@@ -495,7 +503,7 @@ $down=$row['down'];
   </div>
 </div>
 
-<div id="music">
+<div class="content music">
   <div class="container">
     <div class="page-header">
       <img class="pull-right" src="files/img/social-media-icon-large.png" />
@@ -812,21 +820,21 @@ $(".mapMenu").click( function() {
 
 $(".new_tech").click( function() {
 
-  if ($("#new_tech").css("display") == "none") {
-    $("#new_tech").css("display","block");
-    $("#instagram").css("display","none");
-    $("#kingGround").css("display","none");
-    $("#kingFirst").css("display","none");
-    $("#news_and_notes").css("display","none");
-    $("#flickr").css("display","none");
-    $("#muishere").css("display","none");
-    $("#mystery").css("display","none"); 
-    $("#flickr-promotion").css("display","none"); 
-    $("#cim").css("display","none");
-    $("#kamm").css("display","none");
-    $("#kingSecond").css("display","none");
-    $("#art").css("display","none");
-    $("#music").css("display","none");
+  if ($("div.new_tech").css("display") == "none") {
+    $("div.new_tech").css("display","block");
+    $("div.instagram").css("display","none");
+    $("div.kingGround").css("display","none");
+    $("div.kingFirst").css("display","none");
+    $("div.news_and_notes").css("display","none");
+    $("div.flickr").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.mystery").css("display","none"); 
+    $("div.flickr-promotion").css("display","none"); 
+    $("div.cim").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.art").css("display","none");
+    $("div.music").css("display","none");
     $("#adaMapsMenu").css("display","none");
  
    } 
@@ -879,21 +887,21 @@ $(".new_tech").click( function() {
 
 $(".mystery").click( function() {
 
-  if ($("#mystery").css("display") == "none") {
-    $("#mystery").css("display","block");
-    $("#instagram").css("display","none");
-    $("#kingGround").css("display","none");
-    $("#kingFirst").css("display","none");
-    $("#news_and_notes").css("display","none");
-    $("#flickr").css("display","none");
-    $("#muishere").css("display","none");
-    $("#new_tech").css("display","none");
-    $("#flickr-promotion").css("display","none"); 
-    $("#cim").css("display","none");
-    $("#kamm").css("display","none");
-    $("#kingSecond").css("display","none");
-    $("#art").css("display","none");
-    $("#music").css("display","none");
+  if ($("div.mystery").css("display") == "none") {
+    $("div.mystery").css("display","block");
+    $("div.instagram").css("display","none");
+    $("div.kingGround").css("display","none");
+    $("div.kingFirst").css("display","none");
+    $("div.news_and_notes").css("display","none");
+    $("div.flickr").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.new_tech").css("display","none");
+    $("div.flickr-promotion").css("display","none"); 
+    $("div.cim").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.art").css("display","none");
+    $("div.music").css("display","none");
     $("#adaMapsMenu").css("display","none");
  
    } 
@@ -946,21 +954,21 @@ $(".mystery").click( function() {
 });
 $(".instagram").click( function() {
 
-  if ($("#instagram").css("display") == "none") {
-    $("#instagram").css("display","block");
-    $("#new_tech").css("display","none");
-    $("#kingGround").css("display","none");
-    $("#kingFirst").css("display","none");
-    $("#news_and_notes").css("display","none");
-    $("#flickr").css("display","none");
-    $("#muishere").css("display","none");
-    $("#mystery").css("display","none"); 
-    $("#flickr-promotion").css("display","none");
-    $("#cim").css("display","none");
-    $("#kamm").css("display","none");
-    $("#kingSecond").css("display","none");
-    $("#art").css("display","none");
-    $("#music").css("display","none");
+  if ($("div.instagram").css("display") == "none") {
+    $("div.instagram").css("display","block");
+    $("div.new_tech").css("display","none");
+    $("div.kingGround").css("display","none");
+    $("div.kingFirst").css("display","none");
+    $("div.news_and_notes").css("display","none");
+    $("div.flickr").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.mystery").css("display","none"); 
+    $("div.flickr-promotion").css("display","none");
+    $("div.cim").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.art").css("display","none");
+    $("div.music").css("display","none");
     $("#adaMapsMenu").css("display","none");
 
 } 
@@ -1013,21 +1021,21 @@ $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
 
 $(".news_and_notes").click( function() {
 
-  if ($("#news_and_notes").css("display") == "none") {
-    $("#news_and_notes").css("display","block");
-    $("#new_tech").css("display","none");
-    $("#kingGround").css("display","none");
-    $("#kingFirst").css("display","none");
-    $("#instagram").css("display","none");
-    $("#flickr").css("display","none");
-    $("#muishere").css("display","none");
-    $("#mystery").css("display","none"); 
-    $("#flickr-promotion").css("display","none"); 
-    $("#cim").css("display","none");
-    $("#kamm").css("display","none");
-    $("#kingSecond").css("display","none");
-    $("#art").css("display","none");
-    $("#music").css("display","none");
+  if ($("div.news_and_notes").css("display") == "none") {
+    $("div.news_and_notes").css("display","block");
+    $("div.new_tech").css("display","none");
+    $("div.kingGround").css("display","none");
+    $("div.kingFirst").css("display","none");
+    $("div.instagram").css("display","none");
+    $("div.flickr").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.mystery").css("display","none"); 
+    $("div.flickr-promotion").css("display","none"); 
+    $("div.cim").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.art").css("display","none");
+    $("div.music").css("display","none");
     $("#adaMapsMenu").css("display","none");
  
  } 
@@ -1080,21 +1088,21 @@ $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
 
 $(".flickr").click( function() {
 
-  if ($("#flickr").css("display") == "none") {
-    $("#flickr").css("display","block");
-    $("#new_tech").css("display","none");
-    $("#kingGround").css("display","none");
-    $("#kingFirst").css("display","none");
-    $("#instagram").css("display","none");
-    $("#news_and_notes").css("display","none");
-    $("#muishere").css("display","none");
-    $("#mystery").css("display","none"); 
-    $("#flickr-promotion").css("display","none"); 
-    $("#cim").css("display","none");
-    $("#kamm").css("display","none");
-    $("#kingSecond").css("display","none");
-    $("#art").css("display","none");
-    $("#music").css("display","none");
+  if ($("div.flickr").css("display") == "none") {
+    $("div.flickr").css("display","block");
+    $("div.new_tech").css("display","none");
+    $("div.kingGround").css("display","none");
+    $("div.kingFirst").css("display","none");
+    $("div.instagram").css("display","none");
+    $("div.news_and_notes").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.mystery").css("display","none"); 
+    $("div.flickr-promotion").css("display","none"); 
+    $("div.cim").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.art").css("display","none");
+    $("div.music").css("display","none");
     $("#adaMapsMenu").css("display","none");
 
 } 
@@ -1149,21 +1157,21 @@ $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
 
 $(".flickr-promotion").click( function() {
 
-  if ($("#flickr-promotion").css("display") == "none") {
-    $("#flickr-promotion").css("display","block");
-    $("#instagram").css("display","none");
-    $("#kingGround").css("display","none");
-    $("#kingFirst").css("display","none");
-    $("#news_and_notes").css("display","none");
-    $("#flickr").css("display","none");
-    $("#muishere").css("display","none");
-    $("#mystery").css("display","none"); 
-    $("#new_tech").css("display","none"); 
-    $("#cim").css("display","none");
-    $("#kamm").css("display","none");
-    $("#kingSecond").css("display","none");
-    $("#art").css("display","none");
-    $("#music").css("display","none");
+  if ($("div.flickr-promotion").css("display") == "none") {
+    $("div.flickr-promotion").css("display","block");
+    $("div.instagram").css("display","none");
+    $("div.kingGround").css("display","none");
+    $("div.kingFirst").css("display","none");
+    $("div.news_and_notes").css("display","none");
+    $("div.flickr").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.mystery").css("display","none"); 
+    $("div.new_tech").css("display","none"); 
+    $("div.cim").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.art").css("display","none");
+    $("div.music").css("display","none");
     $("#adaMapsMenu").css("display","none");
  
    } 
@@ -1217,21 +1225,21 @@ $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
 });
 $(".muishere").click( function() {
 
-  if ($("#muishere").css("display") == "none") {
-    $("#muishere").css("display","block");
-    $("#new_tech").css("display","none"); 
-    $("#kingGround").css("display","none"); 
-    $("#kingFirst").css("display","none"); 
-    $("#instagram").css("display","none"); 
-    $("#news_and_notes").css("display","none"); 
-    $("#flickr").css("display","none"); 
-    $("#mystery").css("display","none"); 
-    $("#flickr-promotion").css("display","none"); 
-    $("#cim").css("display","none");
-    $("#kamm").css("display","none");
-    $("#kingSecond").css("display","none");
-    $("#art").css("display","none");
-    $("#music").css("display","none");
+  if ($("div.muishere").css("display") == "none") {
+    $("div.muishere").css("display","block");
+    $("div.new_tech").css("display","none"); 
+    $("div.kingGround").css("display","none"); 
+    $("div.kingFirst").css("display","none"); 
+    $("div.instagram").css("display","none"); 
+    $("div.news_and_notes").css("display","none"); 
+    $("div.flickr").css("display","none"); 
+    $("div.mystery").css("display","none"); 
+    $("div.flickr-promotion").css("display","none"); 
+    $("div.cim").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.art").css("display","none");
+    $("div.music").css("display","none");
     $("#adaMapsMenu").css("display","none");
  
     } 
@@ -1284,21 +1292,21 @@ $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
 
 $(".kingGround").click( function() {
 
-  if ($("#kingGround").css("display") == "none") {
-    $("#kingGround").css("display","block");
-    $("#new_tech").css("display","none");
-    $("#instagram").css("display","none");
-    $("#news_and_notes").css("display","none");
-    $("#flickr").css("display","none");
-    $("#muishere").css("display","none");
-    $("#mystery").css("display","none"); 
-    $("#flickr-promotion").css("display","none"); 
-    $("#kingFirst").css("display","none"); 
-    $("#cim").css("display","none");
-    $("#kamm").css("display","none");
-    $("#kingSecond").css("display","none");
-    $("#art").css("display","none");
-    $("#music").css("display","none");
+  if ($("div.kingGround").css("display") == "none") {
+    $("div.kingGround").css("display","block");
+    $("div.new_tech").css("display","none");
+    $("div.instagram").css("display","none");
+    $("div.news_and_notes").css("display","none");
+    $("div.flickr").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.mystery").css("display","none"); 
+    $("div.flickr-promotion").css("display","none"); 
+    $("div.kingFirst").css("display","none"); 
+    $("div.cim").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.art").css("display","none");
+    $("div.music").css("display","none");
  
   }
   
@@ -1316,21 +1324,21 @@ $(".kingGround").click( function() {
 
 $(".kingFirst").click( function() {
 
-  if ($("#kingFirst").css("display") == "none") {
-    $("#kingFirst").css("display","block");
-    $("#new_tech").css("display","none");
-    $("#instagram").css("display","none");
-    $("#news_and_notes").css("display","none");
-    $("#flickr").css("display","none");
-    $("#muishere").css("display","none");
-    $("#mystery").css("display","none"); 
-    $("#flickr-promotion").css("display","none"); 
-    $("#kingGround").css("display","none");
-    $("#cim").css("display","none");
-    $("#kamm").css("display","none");
-    $("#kingSecond").css("display","none");
-    $("#art").css("display","none");
-    $("#music").css("display","none");
+  if ($("div.kingFirst").css("display") == "none") {
+    $("div.kingFirst").css("display","block");
+    $("div.new_tech").css("display","none");
+    $("div.instagram").css("display","none");
+    $("div.news_and_notes").css("display","none");
+    $("div.flickr").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.mystery").css("display","none"); 
+    $("div.flickr-promotion").css("display","none"); 
+    $("div.kingGround").css("display","none");
+    $("div.cim").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.art").css("display","none");
+    $("div.music").css("display","none");
 
 } 
   $(".kingFirst:button").addClass("btn-primary").removeClass("btn-inverse");
@@ -1347,21 +1355,21 @@ $(".kingFirst").click( function() {
 
 $(".kingSecond").click( function() {
 
-  if ($("#kingSecond").css("display") == "none") {
-    $("#kingSecond").css("display","block");
-    $("#new_tech").css("display","none");
-    $("#instagram").css("display","none");
-    $("#news_and_notes").css("display","none");
-    $("#flickr").css("display","none");
-    $("#muishere").css("display","none");
-    $("#mystery").css("display","none"); 
-    $("#flickr-promotion").css("display","none"); 
-    $("#kingGround").css("display","none");
-    $("#cim").css("display","none");
-    $("#kamm").css("display","none");
-    $("#kingFirst").css("display","none");
-    $("#art").css("display","none");
-    $("#music").css("display","none");
+  if ($("div.kingSecond").css("display") == "none") {
+    $("div.kingSecond").css("display","block");
+    $("div.new_tech").css("display","none");
+    $("div.instagram").css("display","none");
+    $("div.news_and_notes").css("display","none");
+    $("div.flickr").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.mystery").css("display","none"); 
+    $("div.flickr-promotion").css("display","none"); 
+    $("div.kingGround").css("display","none");
+    $("div.cim").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.kingFirst").css("display","none");
+    $("div.art").css("display","none");
+    $("div.music").css("display","none");
 
 } 
   $(".kingSecond:button").addClass("btn-primary").removeClass("btn-inverse");
@@ -1378,21 +1386,21 @@ $(".kingSecond").click( function() {
 
 $(".cim").click( function() {
 
-  if ($("#cim").css("display") == "none") {
-    $("#cim").css("display","block");
-    $("#new_tech").css("display","none");
-    $("#instagram").css("display","none");
-    $("#news_and_notes").css("display","none");
-    $("#flickr").css("display","none");
-    $("#muishere").css("display","none");
-    $("#mystery").css("display","none"); 
-    $("#flickr-promotion").css("display","none"); 
-    $("#kingGround").css("display","none");
-    $("#kingFirst").css("display","none");
-    $("#kamm").css("display","none");
-    $("#kingSecond").css("display","none");
-    $("#art").css("display","none");
-    $("#music").css("display","none");
+  if ($("div.cim").css("display") == "none") {
+    $("div.cim").css("display","block");
+    $("div.new_tech").css("display","none");
+    $("div.instagram").css("display","none");
+    $("div.news_and_notes").css("display","none");
+    $("div.flickr").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.mystery").css("display","none"); 
+    $("div.flickr-promotion").css("display","none"); 
+    $("div.kingGround").css("display","none");
+    $("div.kingFirst").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.art").css("display","none");
+    $("div.music").css("display","none");
 
 } 
   $(".cim:button").addClass("btn-primary").removeClass("btn-inverse");
@@ -1409,21 +1417,21 @@ $(".cim").click( function() {
 
 $(".kamm").click( function() {
 
-  if ($("#kamm").css("display") == "none") {
-    $("#kamm").css("display","block");
-    $("#new_tech").css("display","none");
-    $("#instagram").css("display","none");
-    $("#news_and_notes").css("display","none");
-    $("#flickr").css("display","none");
-    $("#muishere").css("display","none");
-    $("#mystery").css("display","none"); 
-    $("#flickr-promotion").css("display","none"); 
-    $("#kingGround").css("display","none");
-    $("#kingFirst").css("display","none");
-    $("#cim").css("display","none");
-    $("#kingSecond").css("display","none");
-    $("#art").css("display","none");
-    $("#music").css("display","none");
+  if ($("div.kamm").css("display") == "none") {
+    $("div.kamm").css("display","block");
+    $("div.new_tech").css("display","none");
+    $("div.instagram").css("display","none");
+    $("div.news_and_notes").css("display","none");
+    $("div.flickr").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.mystery").css("display","none"); 
+    $("div.flickr-promotion").css("display","none"); 
+    $("div.kingGround").css("display","none");
+    $("div.kingFirst").css("display","none");
+    $("div.cim").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.art").css("display","none");
+    $("div.music").css("display","none");
 
 } 
   $(".kamm:button").addClass("btn-primary").removeClass("btn-inverse");
@@ -1440,21 +1448,21 @@ $(".kamm").click( function() {
 
 $(".art").click( function() {
 
-  if ($("#art").css("display") == "none") {
-    $("#art").css("display","block");
-    $("#new_tech").css("display","none");
-    $("#instagram").css("display","none");
-    $("#news_and_notes").css("display","none");
-    $("#flickr").css("display","none");
-    $("#muishere").css("display","none");
-    $("#mystery").css("display","none"); 
-    $("#flickr-promotion").css("display","none"); 
-    $("#kingGround").css("display","none");
-    $("#kingFirst").css("display","none");
-    $("#cim").css("display","none");
-    $("#kingSecond").css("display","none");
-    $("#kamm").css("display","none");
-    $("#music").css("display","none");
+  if ($("div.art").css("display") == "none") {
+    $("div.art").css("display","block");
+    $("div.new_tech").css("display","none");
+    $("div.instagram").css("display","none");
+    $("div.news_and_notes").css("display","none");
+    $("div.flickr").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.mystery").css("display","none"); 
+    $("div.flickr-promotion").css("display","none"); 
+    $("div.kingGround").css("display","none");
+    $("div.kingFirst").css("display","none");
+    $("div.cim").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.music").css("display","none");
     $("#adaKingMaps").css("display","none");
 } 
   $(".art:button").addClass("btn-primary").removeClass("btn-inverse");
@@ -1473,21 +1481,21 @@ $(".art").click( function() {
 
 $(".music").click( function() {
 
-  if ($("#music").css("display") == "none") {
-    $("#music").css("display","block");
-    $("#new_tech").css("display","none");
-    $("#instagram").css("display","none");
-    $("#news_and_notes").css("display","none");
-    $("#flickr").css("display","none");
-    $("#muishere").css("display","none");
-    $("#mystery").css("display","none"); 
-    $("#flickr-promotion").css("display","none"); 
-    $("#kingGround").css("display","none");
-    $("#kingFirst").css("display","none");
-    $("#cim").css("display","none");
-    $("#kingSecond").css("display","none");
-    $("#kamm").css("display","none");
-    $("#art").css("display","none");
+  if ($("div.music").css("display") == "none") {
+    $("div.music").css("display","block");
+    $("div.new_tech").css("display","none");
+    $("div.instagram").css("display","none");
+    $("div.news_and_notes").css("display","none");
+    $("div.flickr").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.mystery").css("display","none"); 
+    $("div.flickr-promotion").css("display","none"); 
+    $("div.kingGround").css("display","none");
+    $("div.kingFirst").css("display","none");
+    $("div.cim").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.art").css("display","none");
     $("#adaKingMaps").css("display","none"); 
 
 } 
@@ -1593,15 +1601,15 @@ $(".internationalResearch").click( function() {
  
 });
 
-$("iframe","#news_and_notes").css("display","none");
-$("img","#news_and_notes").addClass("img-polaroid");
-$("img","#news_and_notes").css("margin","10px");
-$("#news_and_notes").find("img:odd",".hero-unit").css("float","left");
-$("#news_and_notes").find("img:even",".hero-unit").css("float","right");
-$("#news_and_notes").find("img:odd",".hero-unit").css("clear","left");
-$("#news_and_notes").find("img:even",".hero-unit").css("clear","right");
-$("#news_and_notes").find("img:last",".hero-unit").css("clear","both");
-$("#news_and_notes").find(".hero-unit").css("overflow","hidden");
+$("iframe",".news_and_notes").css("display","none");
+$("img",".news_and_notes").addClass("img-polaroid");
+$("img",".news_and_notes").css("margin","10px");
+$(".news_and_notes").find("img:odd",".hero-unit").css("float","left");
+$(".news_and_notes").find("img:even",".hero-unit").css("float","right");
+$(".news_and_notes").find("img:odd",".hero-unit").css("clear","left");
+$(".news_and_notes").find("img:even",".hero-unit").css("clear","right");
+$(".news_and_notes").find("img:last",".hero-unit").css("clear","both");
+$(".news_and_notes").find(".hero-unit").css("overflow","hidden");
 $('.carousel').carousel();
 $("img",".carousel-inner").css("margin-left","auto");
 $("img",".carousel-inner").css("margin-right","auto");
@@ -1612,6 +1620,28 @@ $("img.no-action").removeClass("img-polaroid");
 
 });
 
+
+var divs = $('div.content'),
+    i = 0;
+
+function cycle() { 
+    
+    divs.css("display","none"); 
+    divs.eq(i).css("display","block");
+    
+    i = ++i % divs.length;
+    cycle_timer();
+};
+
+function cycle_timer() {
+  
+  setTimeout(function() {
+    cycle();
+  },60000);
+
+};
+
+cycle_timer();
 </script>
 
 <script type="text/javascript" src="js/paper.js"></script>
