@@ -1660,10 +1660,23 @@ function cycle_timer() {
   }
 
   timeout = window.setTimeout(function() {
+    $(".menuButton:button").removeClass("btn-primary").addClass("btn-inverse");
+    $(".closeMenu:button").removeClass("btn-inverse").addClass("btn-danger");
+    $(".back:button").removeClass("btn-inverse").addClass("btn-danger");
+    $("#adaMenu").find("button").removeClass("btn-primary");
+    $(".menu").removeClass("menuIn");
+    $(".menu1").removeClass("menuIn1");
+    $(".menu2").removeClass("menuIn2");
+    $(".menu3").removeClass("menuIn3"); 
+    $(".menu4").removeClass("menuIn4"); 
+    $("#adaMenu").css("display","none");
+    $("#adaBookMenu").css("display","none");
+    $("#adaMapsMenu").css("display","none");
+    $("#adaMUIHMenu").css("display","none");
+    $("#adaKingMaps").css("display","none");
     cycle();
-    console.log(timer);
-  },timer);
-  console.log(clicked); 
+    },timer);
+
 };
 
 cycle_timer();
