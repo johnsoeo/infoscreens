@@ -1633,12 +1633,33 @@ function cycle() {
     cycle_timer();
 };
 
-function cycle_timer() {
-  
-  setTimeout(function() {
-    cycle();
-  },60000);
+var clicked = 0;
+var timeout;
 
+$( document ).click(function(){
+  clicked = 1;
+  window.clearTimeout(timeout);
+  window.setTimeout(function(){
+  cycle_timer();
+  },1000);
+})
+
+function cycle_timer() {
+
+  if (clicked == 1) {
+    timer = 120000;
+    console.log("clicked");
+    clicked = 0;
+  } else {
+    timer = 20000;    
+  }
+
+  timeout = window.setTimeout(function() {
+    cycle();
+    console.log(timer);
+  },timer);
+
+  
 };
 
 cycle_timer();
