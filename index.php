@@ -1633,7 +1633,7 @@ function cycle() {
     cycle_timer();
 };
 
-var clicked = 0;
+var clicked;
 var timeout;
 
 $( document ).click(function(){
@@ -1659,6 +1659,7 @@ function cycle_timer() {
     console.log(timer);
   },timer);
 
+  window.setTimeout(timeout);
   
 };
 
