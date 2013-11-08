@@ -1630,26 +1630,31 @@ function cycle() {
     divs.eq(i).css("display","block");
     
     i = ++i % divs.length;
+    clicked = 0;
     cycle_timer();
+
 };
 
-var clicked;
+var clicked = 0;
 var timeout;
 
 $( document ).click(function(){
-  clicked = 1;
-  window.clearTimeout(timeout);
-  window.setTimeout(function(){
-  cycle_timer();
-  },1000);
+  clicked = (clicked + 1);
+  
+  if (clicked == 1) {
+    window.clearTimeout(timeout);
+    console.log(timer);
+    window.setTimeout(function(){
+    cycle_timer();
+    },1000);
+  }
 })
 
 function cycle_timer() {
 
   if (clicked == 1) {
-    timer = 120000;
+    timer = 300000;
     console.log("clicked");
-    clicked = 0;
   } else {
     timer = 20000;    
   }
@@ -1658,9 +1663,7 @@ function cycle_timer() {
     cycle();
     console.log(timer);
   },timer);
-
-  window.setTimeout(timeout);
-  
+  console.log(clicked); 
 };
 
 cycle_timer();
