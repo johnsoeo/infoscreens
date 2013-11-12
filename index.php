@@ -571,7 +571,6 @@ $down=$row['down'];
 <!--<button id="menuButton" class="btn btn-large btn-inverse openMenu">MENU</button>-->
 <script>
 $( document ).ready(function() {
-//$(".openMenu").on("tap",function(event) {
 $(".openMenu").on("tap",function(event) {
 
 
