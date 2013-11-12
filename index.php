@@ -652,7 +652,7 @@ $(".research").click( function() {
   $(".flickr:button").removeClass("btn-primary"); 
   $(".mystery:button").addClass("btn-inverse");
   $(".mystery:button").removeClass("btn-primary"); 
- $(".flickr-promotion:button").addClass("btn-inverse");
+  $(".flickr-promotion:button").addClass("btn-inverse");
   $(".flickr-promotion:button").removeClass("btn-primary"); 
   $("#adaMenu").find("button",".instagram").removeClass("btn-inverse");
   $("#adaMenu").find("button",".news_and_notes").removeClass("btn-inverse");
@@ -1266,7 +1266,7 @@ $(".muishere").click( function() {
   $("#adaMenu").find("button",".new_tech").removeClass("btn-inverse");
   $("#adaMenu").find("button",".news_and_notes").removeClass("btn-inverse");
   $("#adaMenu").find("button",".mystery").removeClass("btn-inverse");
-$("#adaMenu").find("button",".flickr-promotion").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".flickr-promotion").removeClass("btn-inverse");
  
   $("#king:button").addClass("btn-inverse");
   $("#king:button").removeClass("btn-primary"); 
@@ -1276,13 +1276,11 @@ $("#adaMenu").find("button",".flickr-promotion").removeClass("btn-inverse");
   $(".muishere:button").removeClass("btn-inverse"); 
   $(".mystery:button").addClass("btn-inverse");
   $(".mystery:button").removeClass("btn-primary"); 
- $(".flickr-promotion:button").addClass("btn-inverse");
+  $(".flickr-promotion:button").addClass("btn-inverse");
   $(".flickr-promotion:button").removeClass("btn-primary"); 
-  $(".menu").removeClass("menuIn");
   $(".menu1").removeClass("menuIn1");
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3");
-  $(".menu4").removeClass("menuIn4"); 
  
   $("#adaMenu").find("button",".flickr").removeClass("btn-inverse");
   $("#adaMapsMenu").find("button",".kamm").removeClass("btn-inverse");
@@ -1625,9 +1623,13 @@ var divs = $('div.content'),
     i = 0;
 
 function cycle() { 
-    
+
     divs.css("display","none"); 
-    divs.eq(i).css("display","block");
+    divs.eq(i).css("display","block"); 
+    
+    if (divs.eq(i).hasClass("muishere")) {
+    zoomLocal();
+    }
     
     i = ++i % divs.length;
     clicked = 0;
@@ -1643,7 +1645,6 @@ $( document ).click(function(){
   
   if (clicked == 1) {
     window.clearTimeout(timeout);
-    console.log(timer);
     window.setTimeout(function(){
     cycle_timer();
     },1000);
@@ -1654,9 +1655,8 @@ function cycle_timer() {
 
   if (clicked == 1) {
     timer = 300000;
-    console.log("clicked");
   } else {
-    timer = 20000;    
+    timer = 20000;    ;
   }
 
   timeout = window.setTimeout(function() {
