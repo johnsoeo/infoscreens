@@ -8,6 +8,7 @@
       <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
       <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
       <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+      <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script> 
       <script src="../bootstrap/js/bootstrap.js"></script>
 <style>
 
@@ -570,8 +571,11 @@ $down=$row['down'];
 <!--<button id="menuButton" class="btn btn-large btn-inverse openMenu">MENU</button>-->
 <script>
 $( document ).ready(function() {
-$(".openMenu").click (function() {
-  if($(".menu").attr("class") == ("menu menu1 menuIn")) {
+//$(".openMenu").on("tap",function(event) {
+$(".openMenu").on("tap",function(event) {
+
+
+if($(".menu").attr("class") == ("menu menu1 menuIn")) {
 
   $(".menu").removeClass("menuIn");
   $(".menu1").removeClass("menuIn1");
@@ -588,7 +592,7 @@ $(".openMenu").click (function() {
   }
 });
 
-$(".maps").click( function() {
+$(".maps").on("tap",function(event) {
   $(".menu2").addClass("menuIn2");
   $(".menu4").removeClass("menuIn4");
   $(".maps:button").addClass("btn-primary");
@@ -635,7 +639,7 @@ $(".maps").click( function() {
   $("#adaMUIHMenu").css("display","none"); 
 });
 
-$(".research").click( function() {
+$(".research").on("tap",function(event) {
   $(".menu4").addClass("menuIn4");
   $(".research:button").addClass("btn-primary");
   $(".research:button").removeClass("btn-inverse");
@@ -676,13 +680,13 @@ $("#adaMenu").find("button",".flickr-promotion").removeClass("btn-inverse");
   $("#adaKingMaps").css("display","none");
   $("#adaMapsMenu").css("display","none");
 });
-$(".closeMenu").click( function() {
+$(".closeMenu").on("tap",function(event) {
 
   $(".closeMenu:button").html('Close Menu');
 
 });
 
-$("#king").click (function() {
+$("#king").on("tap",function(event) {
   $(".menu3").addClass("menuIn3");
   $("#king:button").addClass("btn-primary");
   $("#king:button").removeClass("btn-inverse");
@@ -730,11 +734,11 @@ $("#king").click (function() {
 
 });
 
-$(".back").click( function() {
+$(".back").on("tap",function(event) {
     $(this).parent().removeClass("menuIn menuIn2 menuIn3 menuIn4");
 });
 
-$(".closeMenu").click( function() {
+$(".closeMenu").on("tap",function(event) {
   $(".menu").removeClass("menuIn");
   $(".menu1").removeClass("menuIn1");
   $(".menu2").removeClass("menuIn2");
@@ -743,7 +747,7 @@ $(".closeMenu").click( function() {
 
 });
 
-$(".ada").click( function() {
+$(".ada").on("tap",function(event) {
 
   if ($("#adaMenu").css("display") == "none") {
     $("#adaMenu").css("display","block");
@@ -768,7 +772,7 @@ $(".ada").click( function() {
 });
 
 
-$(".adaBook").click( function() {
+$(".adaBook").on("tap",function(event) {
 
   if ($("#adaBookMenu").css("display") == "none") {
     $("#adaBookMenu").css("display","block");
@@ -781,7 +785,7 @@ $(".adaBook").click( function() {
   
 });
 
-$(".adaMUIHMenu").click( function() {
+$(".adaMUIHMenu").on("tap",function(event) {
 
   if ($("#adaMUIHMenu").css("display") == "none") {
     $("#adaMUIHMenu").css("display","block");
@@ -794,7 +798,7 @@ $(".adaMUIHMenu").click( function() {
   
 });
 
-$(".adaKingMaps").click( function() {
+$(".adaKingMaps").on("tap",function(event) {
 
   if ($("#adaKingMaps").css("display") == "none") {
     $("#adaKingMaps").css("display","block");
@@ -805,7 +809,7 @@ $(".adaKingMaps").click( function() {
    
   } 
 });
-$(".mapMenu").click( function() {
+$(".mapMenu").on("tap",function(event) {
 
   if ($("#adaMapsMenu").css("display") == "none") {
     $("#adaMapsMenu").css("display","block");
@@ -818,7 +822,7 @@ $(".mapMenu").click( function() {
 
 });
 
-$(".new_tech").click( function() {
+$(".new_tech").on("tap",function(event) {
 
   if ($("div.new_tech").css("display") == "none") {
     $("div.new_tech").css("display","block");
@@ -885,7 +889,7 @@ $(".new_tech").click( function() {
   $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
 });
 
-$(".mystery").click( function() {
+$(".mystery").on("tap",function(event) {
 
   if ($("div.mystery").css("display") == "none") {
     $("div.mystery").css("display","block");
@@ -952,7 +956,7 @@ $(".mystery").click( function() {
   $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
 
 });
-$(".instagram").click( function() {
+$(".instagram").on("tap",function(event) {
 
   if ($("div.instagram").css("display") == "none") {
     $("div.instagram").css("display","block");
@@ -1019,7 +1023,7 @@ $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
 
 });
 
-$(".news_and_notes").click( function() {
+$(".news_and_notes").on("tap",function(event) {
 
   if ($("div.news_and_notes").css("display") == "none") {
     $("div.news_and_notes").css("display","block");
@@ -1086,7 +1090,7 @@ $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
 
 });
 
-$(".flickr").click( function() {
+$(".flickr").on("tap",function(event) {
 
   if ($("div.flickr").css("display") == "none") {
     $("div.flickr").css("display","block");
@@ -1155,7 +1159,7 @@ $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
 
 });
 
-$(".flickr-promotion").click( function() {
+$(".flickr-promotion").on("tap",function(event) {
 
   if ($("div.flickr-promotion").css("display") == "none") {
     $("div.flickr-promotion").css("display","block");
@@ -1223,7 +1227,7 @@ $("#adaMenu").find("button",".flickr-promotion").removeClass("btn-inverse");
 $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
 
 });
-$(".muishere").click( function() {
+$(".muishere").on("tap",function(event) {
 
   if ($("div.muishere").css("display") == "none") {
     $("div.muishere").css("display","block");
@@ -1288,7 +1292,7 @@ $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
 
 });
 
-$(".kingGround").click( function() {
+$(".kingGround").on("tap",function(event) {
 
   if ($("div.kingGround").css("display") == "none") {
     $("div.kingGround").css("display","block");
@@ -1320,7 +1324,7 @@ $(".kingGround").click( function() {
  
 });
 
-$(".kingFirst").click( function() {
+$(".kingFirst").on("tap",function(event) {
 
   if ($("div.kingFirst").css("display") == "none") {
     $("div.kingFirst").css("display","block");
@@ -1351,7 +1355,7 @@ $(".kingFirst").click( function() {
 
 });
 
-$(".kingSecond").click( function() {
+$(".kingSecond").on("tap",function(event) {
 
   if ($("div.kingSecond").css("display") == "none") {
     $("div.kingSecond").css("display","block");
@@ -1382,7 +1386,7 @@ $(".kingSecond").click( function() {
 
 });
 
-$(".cim").click( function() {
+$(".cim").on("tap",function(event) {
 
   if ($("div.cim").css("display") == "none") {
     $("div.cim").css("display","block");
@@ -1413,7 +1417,7 @@ $(".cim").click( function() {
  
 });
 
-$(".kamm").click( function() {
+$(".kamm").on("tap",function(event) {
 
   if ($("div.kamm").css("display") == "none") {
     $("div.kamm").css("display","block");
@@ -1444,7 +1448,7 @@ $(".kamm").click( function() {
  
 });
 
-$(".art").click( function() {
+$(".art").on("tap",function(event) {
 
   if ($("div.art").css("display") == "none") {
     $("div.art").css("display","block");
@@ -1477,7 +1481,7 @@ $(".art").click( function() {
  
 });
 
-$(".music").click( function() {
+$(".music").on("tap",function(event) {
 
   if ($("div.music").css("display") == "none") {
     $("div.music").css("display","block");
@@ -1511,7 +1515,7 @@ $("#adaKingMaps").find("button").removeClass("btn-inverse");
 
 });
 
-$(".localResearch").click( function() {
+$(".localResearch").on("tap",function(event) {
 
   zoomLocal(); 
   $(".localResearch:button").addClass("btn-primary");
@@ -1533,7 +1537,7 @@ $(".localResearch").click( function() {
  
 });
 
-$(".regionalResearch").click( function() {
+$(".regionalResearch").on("tap",function(event) {
 
     zoomRegional(); 
   $(".regionalResearch:button").addClass("btn-primary");
@@ -1555,7 +1559,7 @@ $(".regionalResearch").click( function() {
  
 });
 
-$(".nationalResearch").click( function() {
+$(".nationalResearch").on("tap",function(event) {
 
     zoomNational(); 
   $(".nationalResearch:button").addClass("btn-primary");
@@ -1577,7 +1581,7 @@ $(".nationalResearch").click( function() {
  
 });
 
-$(".internationalResearch").click( function() {
+$(".internationalResearch").on("tap",function(event) {
 
     zoomInternational(); 
   $(".internationalResearch:button").addClass("btn-primary");
@@ -1640,7 +1644,7 @@ function cycle() {
 var clicked = 0;
 var timeout;
 
-$( document ).click(function(){
+$( document ).on("tap",function(event) {
   clicked = (clicked + 1);
   
   if (clicked == 1) {
