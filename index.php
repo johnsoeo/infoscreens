@@ -85,6 +85,12 @@ top:200px;
   transition: all 0.2s ease-in-out;
   -webkit-transform: translate3d(400px, 0, 0); 
 }
+
+.menuIn5 {
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: translate3d(600px, 0, 0); 
+}
+
 #adaMenu {
     display:none;
     }
@@ -104,12 +110,16 @@ top:200px;
 #adaKingMaps {
   display:none;
 }
-#adaMenu, #adaBookMenu, #adaMapsMenu, #adaMUIHMenu, #adaKingMaps {
+
+#adaBestMaps {
+  display:none;
+}
+#adaMenu, #adaBookMenu, #adaMapsMenu, #adaMUIHMenu, #adaKingMaps, #adaBestMaps {
   margin-top:5px;
   margin-left:20px;
 }
 
-#adaMenu button, #adaBookMenu button, #adaMapsMenu button, #adaMUIHMenu button, #adaKingMaps button {
+#adaMenu button, #adaBookMenu button, #adaMapsMenu button, #adaMUIHMenu button, #adaKingMaps button, #adaBestMaps button  {
   margin:2px;
   margin:2px;
 }
@@ -152,6 +162,14 @@ div.new_tech {
   }
 
 div.kingSecond {
+    display:none;
+  }
+
+div.bestClass {
+    display:none;
+  }
+
+div.bestDen {
     display:none;
   }
 
@@ -251,6 +269,7 @@ iframe {
 <div class="menu menu2">
   <button class="btn btn-large btn-danger menuButton back"><i class="icon-circle-arrow-left pull-left"></i>Back</button>
     <button id="king" class="btn btn-large btn-inverse menuButton">King Library</button>
+    <button id="best" class="btn btn-large btn-inverse menuButton">BEST Library</button>
     <button class="btn btn-large btn-inverse menuButton art">Art & Architecture Library</button>
     <button class="btn btn-large btn-inverse menuButton music">Music Library</button>
 
@@ -271,6 +290,12 @@ iframe {
     <button class="btn btn-large btn-inverse menuButton nationalResearch">National Research</button>    
     <button class="btn btn-large btn-inverse menuButton internationalResearch">International Research</button>
 </div>
+<div class="menu menu5">
+      <button class="btn btn-large btn-danger menuButton back"><i class="icon-circle-arrow-left pull-left"></i>Back</button>
+      <button class="btn btn-large btn-inverse menuButton bestClass">BEST Classroom</button>
+      <button class="btn btn-large btn-inverse menuButton bestDen">Digital Den</button>
+</div>
+
 </div>
 <div class="content new_tech">
 <div class="page-header">
@@ -494,6 +519,26 @@ $down=$row['down'];
   </div>
 </div>
 
+<div class="content bestClass">
+  <div class="container">
+    <div class="page-header">
+      <img class="pull-right" src="files/img/social-media-icon-large.png" />
+      <h1>Computer Availability Maps<small>  BEST Library, Classroom </small></h1>
+    </div>
+   <iframe scrolling="no" src="http://staff.lib.muohio.edu/~cameroj3/webtests/ajax/labtest/mapbyid.php?map=26"></iframe>
+  </div>
+</div>
+
+<div class="content bestDen">
+  <div class="container">
+    <div class="page-header">
+      <img class="pull-right" src="files/img/social-media-icon-large.png" />
+      <h1>Computer Availability Maps<small>  BEST Library, Digital Den </small></h1>
+    </div>
+   <iframe scrolling="no" src="http://staff.lib.muohio.edu/~cameroj3/webtests/ajax/labtest/mapbyid.php?map=31"></iframe>
+  </div>
+</div>
+
 <div class="content art">
   <div class="container">
     <div class="page-header">
@@ -548,18 +593,21 @@ $down=$row['down'];
             </ul>
             <ul id="adaMapsMenu" class="nav nav-pills">
               <li><button class="btn btn-large adaKingMaps" type="button">King Library</button></li>
+              <li><button class="btn btn-large adaBestMaps" type="button">BEST Library</button></li>
               <li><button class="btn btn-large art" type="button">Art & Architecture Library</button></li>
               <li><button class="btn btn-large music" type="button">Music Library</button></li>
-
             </ul>
             <ul id="adaKingMaps" class="nav nav-pills">
               <li><button class="btn btn-large kingGround" type="button">King Ground Floor</button></li>
               <li><button class="btn btn-large kingFirst" type="button">King First Floor</button></li>
- 
               <li><button class="btn btn-large kingSecond" type="button">King Second Floor</button></li>
               <li><button class="btn btn-large cim" type="button">CIM Lab</button></li>
               <li><button class="btn btn-large kamm" type="button">Kamm Lab</button></li>
             </ul>
+            <ul id="adaBestMaps" class="nav nav-pills">
+              <li><button class="btn btn-large bestDen" type="button">Digital Den</button></li>
+              <li><button class="btn btn-large bestClass" type="button">BEST Classroom</button></li>
+            </ul> 
             <ul id="adaMUIHMenu" class="nav nav-pills">
               <li><button class="btn btn-large localResearch" type="button">Local Research</button></li>
               <li><button class="btn btn-large regionalResearch" type="button">Regional Research</button></li>
@@ -581,6 +629,7 @@ if($(".menu").attr("class") == ("menu menu1 menuIn")) {
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3"); 
   $(".menu4").removeClass("menuIn4"); 
+  $(".menu5").removeClass("menuIn5"); 
  
   } 
 
@@ -602,6 +651,8 @@ $(".maps").on("tap",function(event) {
   $(".instagram:button").removeClass("btn-primary");
   $("#king:button").addClass("btn-inverse");
   $("#king:button").removeClass("btn-primary");
+  $("#best:button").addClass("btn-inverse");
+  $("#best:button").removeClass("btn-primary");
   $(".news_and_notes:button").addClass("btn-inverse");
   $(".news_and_notes:button").removeClass("btn-primary");
   $(".closeMenu:button").html('Close Menus'); 
@@ -631,6 +682,8 @@ $(".maps").on("tap",function(event) {
   $("#adaKingMaps").find("button",".kingSecond").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".cim").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestDen").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestClass").removeClass("btn-inverse");
   $("#adaMapsMenu").find("button",".kamm").removeClass("btn-inverse");
  
   $(".research:button").addClass("btn-inverse");
@@ -648,6 +701,8 @@ $(".research").on("tap",function(event) {
   $(".instagram:button").removeClass("btn-primary");
   $("#king:button").addClass("btn-inverse");
   $("#king:button").removeClass("btn-primary");
+  $("#best:button").addClass("btn-inverse");
+  $("#best:button").removeClass("btn-primary");
   $(".news_and_notes:button").addClass("btn-inverse");
   $(".news_and_notes:button").removeClass("btn-primary");
   $(".closeMenu:button").html('Close Menus'); 
@@ -675,8 +730,11 @@ $("#adaMenu").find("button",".flickr-promotion").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".kingSecond").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".cim").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestDen").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestClass").removeClass("btn-inverse");
   $("#adaMapsMenu").find("button",".kamm").removeClass("btn-inverse");
   $("#adaKingMaps").css("display","none");
+  $("#adaBestMaps").css("display","none");
   $("#adaMapsMenu").css("display","none");
 });
 $(".closeMenu").on("tap",function(event) {
@@ -687,8 +745,11 @@ $(".closeMenu").on("tap",function(event) {
 
 $("#king").on("tap",function(event) {
   $(".menu3").addClass("menuIn3");
+  $(".menu5").removeClass("menuIn5");
   $("#king:button").addClass("btn-primary");
   $("#king:button").removeClass("btn-inverse");
+  $("#best:button").addClass("btn-inverse");
+  $("#best:button").removeClass("btn-primary");
   $(".maps:button").addClass("btn-inverse");
   $(".maps:button").removeClass("btn-primary"); 
   $(".instagram:button").addClass("btn-inverse");
@@ -729,12 +790,67 @@ $("#king").on("tap",function(event) {
   $("#adaKingMaps").find("button",".kingSecond").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".cim").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestDen").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestClass").removeClass("btn-inverse");
+  $("#adaMapsMenu").find("button").removeClass("btn-inverse");
+
+});
+
+$("#best").on("tap",function(event) {
+  $(".menu5").addClass("menuIn5");
+  $(".menu3").removeClass("menuIn3");
+  $("#king:button").addClass("btn-inverse");
+  $("#king:button").removeClass("btn-primary");
+  $("#best:button").addClass("btn-primary");
+  $("#best:button").removeClass("btn-inverse");
+  $(".maps:button").addClass("btn-inverse");
+  $(".maps:button").removeClass("btn-primary"); 
+  $(".instagram:button").addClass("btn-inverse");
+  $(".instagram:button").removeClass("btn-primary"); 
+  $(".new_tech:button").addClass("btn-inverse");
+  $(".new_tech:button").removeClass("btn-primary");
+  $(".news_and_notes:button").addClass("btn-inverse");
+  $(".news_and_notes:button").removeClass("btn-primary");
+  $(".flickr:button").addClass("btn-inverse");
+  $(".flickr:button").removeClass("btn-primary"); 
+  $(".mystery:button").addClass("btn-inverse");
+  $(".mystery:button").removeClass("btn-primary"); 
+  $(".flickr-promotion:button").addClass("btn-inverse");
+  $(".flickr-promotion:button").removeClass("btn-primary"); 
+  $(".cim:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".kamm:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".music:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".art:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".kingSecond:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".kingFirst:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".kingGround:button").addClass("btn-inverse").removeClass("btn-primary");
+ 
+  $("#adaMenu").find("button",".instagram").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".maps").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".news_and_notes").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".new_tech").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".flickr").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".mystery").removeClass("btn-inverse");
+  $("#adaMenu").find("button",".flickr-promotion").removeClass("btn-inverse");
+ 
+  $("#adaMUIHMenu").find("button",".internationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".nationalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".regionalResearch").removeClass("btn-inverse");
+  $("#adaMUIHMenu").find("button",".localResearch").removeClass("btn-inverse");
+  $("#adaKingMaps").find("button",".kingGround").removeClass("btn-inverse");
+  $("#adaKingMaps").find("button",".kingFirst").removeClass("btn-inverse");
+  $("#adaKingMaps").find("button",".kingSecond").removeClass("btn-inverse");
+  $("#adaKingMaps").find("button",".cim").removeClass("btn-inverse");
+  $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestDen").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestClass").removeClass("btn-inverse");
   $("#adaMapsMenu").find("button").removeClass("btn-inverse");
 
 });
 
 $(".back").on("tap",function(event) {
-    $(this).parent().removeClass("menuIn menuIn2 menuIn3 menuIn4");
+    $(this).parent().removeClass("menuIn menuIn2 menuIn3 menuIn4 menuIn5");
 });
 
 $(".closeMenu").on("tap",function(event) {
@@ -743,7 +859,7 @@ $(".closeMenu").on("tap",function(event) {
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3");
   $(".menu4").removeClass("menuIn4");
-
+  $(".menu5").removeClass("menuIn5");
 });
 
 $(".ada").on("tap",function(event) {
@@ -754,7 +870,13 @@ $(".ada").on("tap",function(event) {
     $("#adaMapsMenu").css("display","none");
     $("#adaMUIHMenu").css("display","none");
     $("#adaKingMaps").css("display","none");
- 
+    $("#adaBestMaps").css("display","none");
+    $(".menu").removeClass("menuIn");
+    $(".menu1").removeClass("menuIn1");
+    $(".menu2").removeClass("menuIn2");
+    $(".menu3").removeClass("menuIn3");
+    $(".menu4").removeClass("menuIn4");
+    $(".menu5").removeClass("menuIn5"); 
      
   } 
   
@@ -764,8 +886,14 @@ $(".ada").on("tap",function(event) {
     $("#adaMapsMenu").css("display","none");
     $("#adaMUIHMenu").css("display","none");
     $("#adaKingMaps").css("display","none");
- 
-  }  
+    $("#adaBestMaps").css("display","none");
+    $(".menu").removeClass("menuIn");
+    $(".menu1").removeClass("menuIn1");
+    $(".menu2").removeClass("menuIn2");
+    $(".menu3").removeClass("menuIn3");
+    $(".menu4").removeClass("menuIn4");
+    $(".menu5").removeClass("menuIn5"); 
+}  
 
 
 });
@@ -779,6 +907,7 @@ $(".adaBook").on("tap",function(event) {
     $("#adaMapsMenu").css("display","none");
     $("#adaMUIHMenu").css("display","none");
     $("#adaKingMaps").css("display","none");
+    $("#adaBestMaps").css("display","none");
  
   } 
   
@@ -792,7 +921,8 @@ $(".adaMUIHMenu").on("tap",function(event) {
     $("#adaMapsMenu").css("display","none");
     $("#adaBookMenu").css("display","none");
     $("#adaKingMaps").css("display","none");
-   
+    $("#adaBestMaps").css("display","none");
+ 
   } 
   
 });
@@ -808,6 +938,20 @@ $(".adaKingMaps").on("tap",function(event) {
    
   } 
 });
+
+$(".adaBestMaps").on("tap",function(event) {
+
+  if ($("#adaBestMaps").css("display") == "none") {
+    $("#adaBestMaps").css("display","block");
+    $("#adaKingMaps").css("display","none");
+    $("#adaMenu").css("display","none");
+    $("#adaMapsMenu").css("display","none");
+    $("#adaBookMenu").css("display","none");
+    $("#adaMUIHMenu").css("display","none");
+   
+  } 
+});
+
 $(".mapMenu").on("tap",function(event) {
 
   if ($("#adaMapsMenu").css("display") == "none") {
@@ -816,7 +960,7 @@ $(".mapMenu").on("tap",function(event) {
     $("#adaBookMenu").css("display","none");
     $("#adaMUIHMenu").css("display","none");
     $("#adaKingMaps").css("display","none");
- 
+    $("#adaBestMaps").css("display","none");
   } 
 
 });
@@ -838,6 +982,8 @@ $(".new_tech").on("tap",function(event) {
     $("div.kingSecond").css("display","none");
     $("div.art").css("display","none");
     $("div.music").css("display","none");
+    $("div.bestDen").css("display","none");
+    $("div.bestClass").css("display","none");
     $("#adaMapsMenu").css("display","none");
  
    } 
@@ -850,6 +996,8 @@ $(".new_tech").on("tap",function(event) {
   $(".instagram:button").removeClass("btn-primary");
   $("#king:button").addClass("btn-inverse");
   $("#king:button").removeClass("btn-primary");
+  $("#best:button").addClass("btn-inverse");
+  $("#best:button").removeClass("btn-primary");
   $(".news_and_notes:button").addClass("btn-inverse");
   $(".news_and_notes:button").removeClass("btn-primary"); 
   $(".menu").removeClass("menuIn");
@@ -857,6 +1005,7 @@ $(".new_tech").on("tap",function(event) {
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3");
   $(".menu4").removeClass("menuIn4");
+  $(".menu5").removeClass("menuIn5");
   $(".flickr:button").addClass("btn-inverse");
   $(".flickr:button").removeClass("btn-primary");
   $(".muishere:button").addClass("btn-inverse");
@@ -884,6 +1033,7 @@ $(".new_tech").on("tap",function(event) {
  
   $("#adaMUIHMenu").css("display","none");
   $("#adaKingMaps").css("display","none");
+  $("#adaBestMaps").css("display","none");
   $("#adaMapsMenu").find("button",".kamm").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
 });
@@ -905,6 +1055,8 @@ $(".mystery").on("tap",function(event) {
     $("div.kingSecond").css("display","none");
     $("div.art").css("display","none");
     $("div.music").css("display","none");
+    $("div.bestDen").css("display","none");
+    $("div.bestClass").css("display","none");
     $("#adaMapsMenu").css("display","none");
  
    } 
@@ -917,6 +1069,8 @@ $(".mystery").on("tap",function(event) {
   $(".instagram:button").removeClass("btn-primary");
   $("#king:button").addClass("btn-inverse");
   $("#king:button").removeClass("btn-primary");
+  $("#best:button").addClass("btn-inverse");
+  $("#best:button").removeClass("btn-primary");
   $(".news_and_notes:button").addClass("btn-inverse");
   $(".news_and_notes:button").removeClass("btn-primary"); 
   $(".menu").removeClass("menuIn");
@@ -924,7 +1078,7 @@ $(".mystery").on("tap",function(event) {
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3");
   $(".menu4").removeClass("menuIn4");
- 
+  $(".menu5").removeClass("menuIn5");
   $(".flickr:button").addClass("btn-inverse");
   $(".flickr:button").removeClass("btn-primary");
   $(".muishere:button").addClass("btn-inverse");
@@ -951,8 +1105,11 @@ $(".mystery").on("tap",function(event) {
 
   $("#adaMUIHMenu").css("display","none");
   $("#adaKingMaps").css("display","none");
+  $("#adaBestMaps").css("display","none");
   $("#adaMapsMenu").find("button",".kamm").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestDen").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestClass").removeClass("btn-inverse");
 
 });
 $(".instagram").on("tap",function(event) {
@@ -972,6 +1129,8 @@ $(".instagram").on("tap",function(event) {
     $("div.kingSecond").css("display","none");
     $("div.art").css("display","none");
     $("div.music").css("display","none");
+    $("div.bestDen").css("display","none");
+    $("div.bestClass").css("display","none");
     $("#adaMapsMenu").css("display","none");
 
 } 
@@ -982,7 +1141,8 @@ $(".instagram").on("tap",function(event) {
   $(".new_tech:button").addClass("btn-inverse");
   $(".new_tech:button").removeClass("btn-primary"); 
   $("#king:button").addClass("btn-inverse");
-  $("#king:button").removeClass("btn-primary"); 
+  $("#best:button").removeClass("btn-primary"); 
+  $("#best:button").addClass("btn-inverse");
   $(".news_and_notes:button").addClass("btn-inverse");
   $(".news_and_notes:button").removeClass("btn-primary"); 
   $(".menu").removeClass("menuIn");
@@ -990,6 +1150,7 @@ $(".instagram").on("tap",function(event) {
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3");
   $(".menu4").removeClass("menuIn4"); 
+  $(".menu5").removeClass("menuIn5"); 
   $(".flickr:button").addClass("btn-inverse");
   $(".flickr:button").removeClass("btn-primary");
   $(".muishere:button").addClass("btn-inverse");
@@ -1017,8 +1178,12 @@ $("#adaMenu").find("button",".flickr-promotion").removeClass("btn-inverse");
  
   $("#adaMUIHMenu").css("display","none");
   $("#adaKingMaps").css("display","none");
+  $("#adaBestMaps").css("display","none");
+  
   $("#adaMapsMenu").find("button",".kamm").removeClass("btn-inverse");
 $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+$("#adaBestMaps").find("button",".bestDen").removeClass("btn-inverse");
+$("#adaBestMaps").find("button",".bestClass").removeClass("btn-inverse");
 
 });
 
@@ -1039,6 +1204,8 @@ $(".news_and_notes").on("tap",function(event) {
     $("div.kingSecond").css("display","none");
     $("div.art").css("display","none");
     $("div.music").css("display","none");
+    $("div.bestDen").css("display","none");
+    $("div.bestClass").css("display","none");
     $("#adaMapsMenu").css("display","none");
  
  } 
@@ -1075,6 +1242,8 @@ $("#adaMenu").find("button",".flickr-promotion").removeClass("btn-inverse");
  
   $("#king:button").addClass("btn-inverse");
   $("#king:button").removeClass("btn-primary"); 
+  $("#best:button").addClass("btn-inverse");
+  $("#best:button").removeClass("btn-primary"); 
   $(".news_and_notes:button").addClass("btn-primary");
   $(".news_and_notes:button").removeClass("btn-inverse"); 
   $(".menu").removeClass("menuIn");
@@ -1082,10 +1251,14 @@ $("#adaMenu").find("button",".flickr-promotion").removeClass("btn-inverse");
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3");
   $(".menu4").removeClass("menuIn4"); 
+  $(".menu5").removeClass("menuIn5"); 
   $("#adaMUIHMenu").css("display","none");
   $("#adaKingMaps").css("display","none");
+  $("#adaBestMaps").css("display","none");
   $("#adaMapsMenu").find("button",".kamm").removeClass("btn-inverse");
-$("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestDen").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestClass").removeClass("btn-inverse");
 
 });
 
@@ -1106,6 +1279,8 @@ $(".flickr").on("tap",function(event) {
     $("div.kingSecond").css("display","none");
     $("div.art").css("display","none");
     $("div.music").css("display","none");
+    $("div.bestDen").css("display","none");
+    $("div.bestClass").css("display","none");
     $("#adaMapsMenu").css("display","none");
 
 } 
@@ -1143,6 +1318,8 @@ $("#adaMenu").find("button",".flickr-promotion").removeClass("btn-inverse");
  
   $("#king:button").addClass("btn-inverse");
   $("#king:button").removeClass("btn-primary"); 
+  $("#best:button").addClass("btn-inverse");
+  $("#best:button").removeClass("btn-primary"); 
   $(".flickr:button").addClass("btn-primary");
   $(".flickr:button").removeClass("btn-inverse"); 
   $(".menu").removeClass("menuIn");
@@ -1150,11 +1327,14 @@ $("#adaMenu").find("button",".flickr-promotion").removeClass("btn-inverse");
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3");
   $(".menu4").removeClass("menuIn4"); 
-
+  $(".menu5").removeClass("menuIn5"); 
   $("#adaMUIHMenu").css("display","none");
   $("#adaKingMaps").css("display","none");
+  $("#adaBestMaps").css("display","none");
   $("#adaMapsMenu").find("button",".kamm").removeClass("btn-inverse");
-$("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestClass").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestDen").removeClass("btn-inverse");
 
 });
 
@@ -1175,6 +1355,8 @@ $(".flickr-promotion").on("tap",function(event) {
     $("div.kingSecond").css("display","none");
     $("div.art").css("display","none");
     $("div.music").css("display","none");
+    $("div.bestDen").css("display","none");
+    $("div.bestClass").css("display","none");
     $("#adaMapsMenu").css("display","none");
  
    } 
@@ -1187,6 +1369,8 @@ $(".flickr-promotion").on("tap",function(event) {
   $(".instagram:button").removeClass("btn-primary");
   $("#king:button").addClass("btn-inverse");
   $("#king:button").removeClass("btn-primary");
+  $("#best:button").addClass("btn-inverse");
+  $("#best:button").removeClass("btn-primary");
   $(".news_and_notes:button").addClass("btn-inverse");
   $(".news_and_notes:button").removeClass("btn-primary"); 
   $(".menu").removeClass("menuIn");
@@ -1194,7 +1378,7 @@ $(".flickr-promotion").on("tap",function(event) {
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3");
   $(".menu4").removeClass("menuIn4"); 
- 
+  $(".menu5").removeClass("menuIn5"); 
   $(".flickr:button").addClass("btn-inverse");
   $(".flickr:button").removeClass("btn-primary");
   $(".muishere:button").addClass("btn-inverse");
@@ -1222,8 +1406,11 @@ $("#adaMenu").find("button",".flickr-promotion").removeClass("btn-inverse");
  
   $("#adaMUIHMenu").css("display","none");
   $("#adaKingMaps").css("display","none");
+  $("#adaBestMaps").css("display","none");
   $("#adaMapsMenu").find("button",".kamm").removeClass("btn-inverse");
-$("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestDen").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestClass").removeClass("btn-inverse");
 
 });
 $(".muishere").on("tap",function(event) {
@@ -1243,6 +1430,8 @@ $(".muishere").on("tap",function(event) {
     $("div.kingSecond").css("display","none");
     $("div.art").css("display","none");
     $("div.music").css("display","none");
+    $("div.bestDen").css("display","none");
+    $("div.bestClass").css("display","none");
     $("#adaMapsMenu").css("display","none");
  
     } 
@@ -1273,6 +1462,8 @@ $(".muishere").on("tap",function(event) {
  
   $("#king:button").addClass("btn-inverse");
   $("#king:button").removeClass("btn-primary"); 
+  $("#best:button").addClass("btn-inverse");
+  $("#best:button").removeClass("btn-primary"); 
   $(".flickr:button").addClass("btn-inverse");
   $(".flickr:button").removeClass("btn-primary"); 
   $(".muishere:button").addClass("btn-primary");
@@ -1284,10 +1475,12 @@ $(".muishere").on("tap",function(event) {
   $(".menu1").removeClass("menuIn1");
   $(".menu2").removeClass("menuIn2");
   $(".menu3").removeClass("menuIn3");
- 
+  $(".menu5").removeClass("menuIn5");
   $("#adaMenu").find("button",".flickr").removeClass("btn-inverse");
   $("#adaMapsMenu").find("button",".kamm").removeClass("btn-inverse");
-$("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestDen").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestClass").removeClass("btn-inverse");
 
 });
 
@@ -1308,6 +1501,8 @@ $(".kingGround").on("tap",function(event) {
     $("div.kingSecond").css("display","none");
     $("div.art").css("display","none");
     $("div.music").css("display","none");
+    $("div.bestDen").css("display","none");
+    $("div.bestClass").css("display","none");
  
   }
   
@@ -1319,6 +1514,81 @@ $(".kingGround").on("tap",function(event) {
   $(".kingSecond:button").addClass("btn-inverse").removeClass("btn-primary");
   $(".kingFirst:button").addClass("btn-inverse").removeClass("btn-primary");
   $("#adaKingMaps").find("button").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button").removeClass("btn-inverse");
+  $("#adaMapsMenu").find("button").removeClass("btn-inverse");
+ 
+});
+
+$(".bestClass").on("tap",function(event) {
+
+  if ($("div.bestClass").css("display") == "none") {
+    $("div.bestClass").css("display","block");
+    $("div.bestDen").css("display","none");
+    $("div.kingGround").css("display","none");
+    $("div.new_tech").css("display","none");
+    $("div.instagram").css("display","none");
+    $("div.news_and_notes").css("display","none");
+    $("div.flickr").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.mystery").css("display","none"); 
+    $("div.flickr-promotion").css("display","none"); 
+    $("div.kingFirst").css("display","none"); 
+    $("div.cim").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.art").css("display","none");
+    $("div.music").css("display","none");
+ 
+  }
+  
+  $(".kingGround:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".bestClass:button").addClass("btn-primary").removeClass("btn-inverse");
+  $(".bestDen:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".cim:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".kamm:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".music:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".art:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".kingSecond:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".kingFirst:button").addClass("btn-inverse").removeClass("btn-primary");
+  $("#adaKingMaps").find("button").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button").removeClass("btn-inverse");
+  $("#adaMapsMenu").find("button").removeClass("btn-inverse");
+ 
+});
+
+$(".bestDen").on("tap",function(event) {
+
+  if ($("div.bestDen").css("display") == "none") {
+    $("div.bestDen").css("display","block");
+    $("div.bestClass").css("display","none");
+    $("div.kingGround").css("display","none");
+    $("div.new_tech").css("display","none");
+    $("div.instagram").css("display","none");
+    $("div.news_and_notes").css("display","none");
+    $("div.flickr").css("display","none");
+    $("div.muishere").css("display","none");
+    $("div.mystery").css("display","none"); 
+    $("div.flickr-promotion").css("display","none"); 
+    $("div.kingFirst").css("display","none"); 
+    $("div.cim").css("display","none");
+    $("div.kamm").css("display","none");
+    $("div.kingSecond").css("display","none");
+    $("div.art").css("display","none");
+    $("div.music").css("display","none");
+ 
+  }
+  
+  $(".bestDen:button").addClass("btn-primary").removeClass("btn-inverse");
+  $(".kingGround:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".bestClass:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".cim:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".kamm:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".music:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".art:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".kingSecond:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".kingFirst:button").addClass("btn-inverse").removeClass("btn-primary");
+  $("#adaKingMaps").find("button").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button").removeClass("btn-inverse");
   $("#adaMapsMenu").find("button").removeClass("btn-inverse");
  
 });
@@ -1340,6 +1610,8 @@ $(".kingFirst").on("tap",function(event) {
     $("div.kingSecond").css("display","none");
     $("div.art").css("display","none");
     $("div.music").css("display","none");
+    $("div.bestDen").css("display","none");
+    $("div.bestClass").css("display","none");
 
 } 
   $(".kingFirst:button").addClass("btn-primary").removeClass("btn-inverse");
@@ -1350,6 +1622,7 @@ $(".kingFirst").on("tap",function(event) {
   $(".kingSecond:button").addClass("btn-inverse").removeClass("btn-primary");
   $(".kingGround:button").addClass("btn-inverse").removeClass("btn-primary");
   $("#adaKingMaps").find("button").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button").removeClass("btn-inverse");
   $("#adaMapsMenu").find("button").removeClass("btn-inverse");
 
 });
@@ -1371,6 +1644,8 @@ $(".kingSecond").on("tap",function(event) {
     $("div.kingFirst").css("display","none");
     $("div.art").css("display","none");
     $("div.music").css("display","none");
+    $("div.bestDen").css("display","none");
+    $("div.bestClass").css("display","none");
 
 } 
   $(".kingSecond:button").addClass("btn-primary").removeClass("btn-inverse");
@@ -1381,6 +1656,7 @@ $(".kingSecond").on("tap",function(event) {
   $(".kingFirst:button").addClass("btn-inverse").removeClass("btn-primary");
   $(".kingGround:button").addClass("btn-inverse").removeClass("btn-primary");
   $("#adaKingMaps").find("button").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button").removeClass("btn-inverse");
   $("#adaMapsMenu").find("button").removeClass("btn-inverse");
 
 });
@@ -1402,6 +1678,8 @@ $(".cim").on("tap",function(event) {
     $("div.kingSecond").css("display","none");
     $("div.art").css("display","none");
     $("div.music").css("display","none");
+    $("div.bestDen").css("display","none");
+    $("div.bestMusic").css("display","none");
 
 } 
   $(".cim:button").addClass("btn-primary").removeClass("btn-inverse");
@@ -1412,6 +1690,7 @@ $(".cim").on("tap",function(event) {
   $(".kingFirst:button").addClass("btn-inverse").removeClass("btn-primary");
   $(".kingGround:button").addClass("btn-inverse").removeClass("btn-primary");
   $("#adaKingMaps").find("button").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button").removeClass("btn-inverse");
   $("#adaMapsMenu").find("button").removeClass("btn-inverse");
  
 });
@@ -1433,6 +1712,8 @@ $(".kamm").on("tap",function(event) {
     $("div.kingSecond").css("display","none");
     $("div.art").css("display","none");
     $("div.music").css("display","none");
+    $("div.bestDen").css("display","none");
+    $("div.bestMusic").css("display","none");
 
 } 
   $(".kamm:button").addClass("btn-primary").removeClass("btn-inverse");
@@ -1443,6 +1724,7 @@ $(".kamm").on("tap",function(event) {
   $(".kingFirst:button").addClass("btn-inverse").removeClass("btn-primary");
   $(".kingGround:button").addClass("btn-inverse").removeClass("btn-primary");
   $("#adaKingMaps").find("button").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button").removeClass("btn-inverse");
   $("#adaMapsMenu").find("button").removeClass("btn-inverse");
  
 });
@@ -1464,19 +1746,27 @@ $(".art").on("tap",function(event) {
     $("div.kingSecond").css("display","none");
     $("div.kamm").css("display","none");
     $("div.music").css("display","none");
+    $("div.bestDen").css("display","none");
+    $("div.bestClass").css("display","none");
     $("#adaKingMaps").css("display","none");
+    $("#adaBestMaps").css("display","none");
 } 
   $(".art:button").addClass("btn-primary").removeClass("btn-inverse");
   $(".kingSecond:button").addClass("btn-inverse").removeClass("btn-primary");
   $(".cim:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".bestDen:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".bestClass:button").addClass("btn-inverse").removeClass("btn-primary");
   $(".music:button").addClass("btn-inverse").removeClass("btn-primary");
   $(".kamm:button").addClass("btn-inverse").removeClass("btn-primary");
   $(".kingFirst:button").addClass("btn-inverse").removeClass("btn-primary");
   $(".kingGround:button").addClass("btn-inverse").removeClass("btn-primary");
   $("#king:button").addClass("btn-inverse").removeClass("btn-primary");
+  $("#best:button").addClass("btn-inverse").removeClass("btn-primary");
   $(".menu3").removeClass("menuIn3"); 
+  $(".menu5").removeClass("menuIn5"); 
   $("#adaMapsMenu").find("button").removeClass("btn-inverse");
   $("#adaKingMaps").find("button").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button").removeClass("btn-inverse");
  
 });
 
@@ -1498,6 +1788,9 @@ $(".music").on("tap",function(event) {
     $("div.kamm").css("display","none");
     $("div.art").css("display","none");
     $("#adaKingMaps").css("display","none"); 
+    $("#adaBestMaps").css("display","none"); 
+    $("div.bestDen").css("display","none");
+    $("div.bestClass").css("display","none");
 
 } 
   $(".music:button").addClass("btn-primary").removeClass("btn-inverse");
@@ -1508,9 +1801,14 @@ $(".music").on("tap",function(event) {
   $(".kingFirst:button").addClass("btn-inverse").removeClass("btn-primary");
   $(".kingGround:button").addClass("btn-inverse").removeClass("btn-primary");
   $("#king:button").addClass("btn-inverse").removeClass("btn-primary");
+  $("#best:button").addClass("btn-inverse").removeClass("btn-primary");
   $(".menu3").removeClass("menuIn3"); 
+  $(".menu5").removeClass("menuIn5"); 
   $("#adaMapsMenu").find("button").removeClass("btn-inverse");
-$("#adaKingMaps").find("button").removeClass("btn-inverse");
+  $("#adaKingMaps").find("button").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button").removeClass("btn-inverse");
+  $(".bestDen:button").addClass("btn-inverse").removeClass("btn-primary");
+  $(".bestClass:button").addClass("btn-inverse").removeClass("btn-primary");
 
 });
 
@@ -1531,6 +1829,8 @@ $(".localResearch").on("tap",function(event) {
   $("#adaKingMaps").find("button",".kingSecond").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".cim").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestDen").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestClass").removeClass("btn-inverse");
  
   $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
  
@@ -1553,6 +1853,8 @@ $(".regionalResearch").on("tap",function(event) {
   $("#adaKingMaps").find("button",".kingSecond").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".cim").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestDen").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestClass").removeClass("btn-inverse");
  
   $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
  
@@ -1575,6 +1877,8 @@ $(".nationalResearch").on("tap",function(event) {
   $("#adaKingMaps").find("button",".kingSecond").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".cim").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestDen").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestClass").removeClass("btn-inverse");
  
   $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
  
@@ -1597,6 +1901,8 @@ $(".internationalResearch").on("tap",function(event) {
   $("#adaKingMaps").find("button",".kingSecond").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".cim").removeClass("btn-inverse");
   $("#adaKingMaps").find("button",".kamm").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestDen").removeClass("btn-inverse");
+  $("#adaBestMaps").find("button",".bestClass").removeClass("btn-inverse");
  
   $("#adaMenu").find("button",".muishere").removeClass("btn-inverse");
  
@@ -1672,11 +1978,13 @@ function cycle_timer() {
     $(".menu2").removeClass("menuIn2");
     $(".menu3").removeClass("menuIn3"); 
     $(".menu4").removeClass("menuIn4"); 
+    $(".menu5").removeClass("menuIn5"); 
     $("#adaMenu").css("display","none");
     $("#adaBookMenu").css("display","none");
     $("#adaMapsMenu").css("display","none");
     $("#adaMUIHMenu").css("display","none");
     $("#adaKingMaps").css("display","none");
+    $("#adaBestMaps").css("display","none");
     cycle();
     },timer);
 
