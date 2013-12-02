@@ -303,6 +303,16 @@ iframe {
         <h1>New Technology <small> provided by the Miami University Libraries</small></h1>
         </div>
       <div class="hero-unit">
+        <h1><img src="files/img/not-bad.jpg" class="img-polaroid pull-left" />Gigabit Wireless in King Library.</h1>
+        <br />
+      <p>The wireless network in King library has been upgraded. If you have a device that supports gigabit Wi-Fi( IEEE 802.11ac) you can connect to MU-WIRELESS at gigabit speeds.</p>
+      <p>Some devices that support gigabit wireless:
+      <ul>
+      <li>HTC One</li>
+      <li>Macbook Air</li>
+      </p> 
+      </div> 
+      <div class="hero-unit">
         <h1><img src="files/img/nexus10.jpg" class="img-polaroid pull-right" />Nexus 10 for Checkout.</h1>
         <br />
       <p>Nexus 10 is the powerful 10-inch tablet from Google. With a super high resolution display, multi-user support, immersive HD content and the best Google apps - Nexus 10 has something for everyone. Available now for checkout in King Library.</p> 
