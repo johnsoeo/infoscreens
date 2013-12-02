@@ -247,6 +247,10 @@ iframe {
   padding-top:10px;
 
 }
+
+.img-polaroid {
+margin:5px;
+}
 </style>
 </head>
 <body>
@@ -303,7 +307,7 @@ iframe {
         <h1>New Technology <small> provided by the Miami University Libraries</small></h1>
         </div>
       <div class="hero-unit">
-        <h1><img src="files/img/not-bad.jpg" class="img-polaroid pull-left" />Gigabit Wireless in King Library.</h1>
+        <h1><img src="files/img/not-bad.jpg" class="img-polaroid pull-right" />Gigabit Wireless in King Library.</h1>
         <br />
       <p>The wireless network in King library has been upgraded. If you have a device that supports gigabit Wi-Fi( IEEE 802.11ac) you can connect to MU-WIRELESS at gigabit speeds.</p>
       <p>Some devices that support gigabit wireless:
