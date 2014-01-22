@@ -261,11 +261,10 @@ margin:5px;
     <button class="btn btn-large btn-danger menuButton closeMenu">Close Menu</button>  
     <button class="btn btn-large btn-inverse menuButton maps">Computer Availability Maps</button>
     <button class="btn btn-large btn-inverse menuButton new_tech">New Technology</button>
-    <button class="btn btn-large btn-inverse menuButton instagram">Instagram Contest!!</button>
     <button class="btn btn-large btn-inverse menuButton news_and_notes">Library News & Events</button>
     <button class="btn btn-large btn-inverse menuButton flickr">Historical Images of Miami U.</button>
     <button class="btn btn-large btn-inverse menuButton research muishere localResearch">Map of MU Research</button>
-    <button class="btn btn-large btn-inverse menuButton mystery">Mystery Person</button>
+    <!--<button class="btn btn-large btn-inverse menuButton mystery">Mystery Person</button>-->
     <button class="btn btn-large btn-inverse menuButton flickr-promotion">Cradle of Coaches</button>
 
 </div>
@@ -349,7 +348,7 @@ To get started, search for “BrowZine” in the app stores (Apple, Google, Amaz
       </div>
       </div>
 
-<div class="content mystery">
+<!--<div class="content mystery">
   <div class="container">
     <div class="page-header">
       <h1>Mystery Person <small>Touch and Drag to Reveal!</small><a href="#paperModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">Reveal Mystery Person</a>
@@ -369,83 +368,7 @@ To get started, search for “BrowZine” in the app stores (Apple, Google, Amaz
       <canvas id="canvas-1" width="600" height="731" class="img-polaroid"></canvas>
     </div>
   </div>
-</div>
-<div class="content instagram">
-<div class="container">
-<?php
-include('../../apis/instagram/connect.php');
-$sql=mysql_query("SELECT * FROM instagram_images WHERE entry_id NOT IN (1989,1988) ORDER BY up DESC;");
-?>
-<div class="page-header">
-<h1>Miami University Libraries' Instagram Contest<img class="pull-right" src="files/img/social-media-icon-large.png" /></h1>
-<ul>
-<li>Snap cool pictures of the libraries using Instagram.</li>
-<li>Apply the hashtag <strong>#mohlibinstagram</strong>.</li>
-<li>Vote on your favorites @ www.lib.miamioh.edu/instagram-contest</li>
-<li>Top vote getter wins a <a href="#nexusModal" data-toggle="modal"><strong>Nexus 7</strong>!!</a></li>
-<li>Images may be printed and displayed in the libraries!</li>
-<li>Contest ends October 13th/14th @ Midnight. Winner will be announced Monday, October 14th @ 11am.</li>
-</ul>
-</div>
-
-<div id="nexusModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="nexusModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="nexusModalLabel">Nexus 7</h3>
-  </div>
-  <div class="modal-body nexusModal">
-    <img class="img-polaroid" src="files/img/nexus7.jpg" />
-    <h3>Nexus 7 (16GB)</h3>
-    <p><strong>Powerful, portable and made for what matters to you.</strong></p>
-    <p>Now thinner, lighter, and faster — Nexus 7 brings you the perfect mix of power and portability and features the world’s sharpest 7” tablet screen.</p>
-  </div>
-</div>
-<div class="span12">
-<ul class="thumbnails">
-
-<?php
-while($row=mysql_fetch_array($sql))
-{
-$standard=$row['standard_url'];
-$lowres=$row['lowres_url'];
-$user=$row['user'];
-$caption=$row['caption'];
-$entry_id=$row['entry_id'];
-$up=$row['up'];
-$down=$row['down'];
-?>
-
-<li class="span3">
-<div class="thumbnail">
-
-<a href="#<?php echo $entry_id; ?>"  data-toggle="modal"><img src="<?php echo $lowres; ?>" class="img-rounded" /></a>
-
-<div class="caption">
-<div id="<?php echo $entry_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-    <h5 id="myModalLabel"><?php echo $caption ?></h5>
-  </div>
-  <div class="modal-body">
-    <p><img src="<?php echo $standard; ?>" /></p>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-  </div>
-</div>
-<p>
-<a class="btn btn-success up vote" id="<?php echo $entry_id; ?>" name="up"><i class="icon-thumbs-up icon-white"></i>&nbsp;&nbsp;<?php echo $up; ?></a>
-</p>
-</div>
-</div>
-</li>
-
-<?php } ?>
-</ul>
-
-</div>
-</div>
-</div>
+</div>-->
 <div class="content news_and_notes">
 <div class="container">
   <div class="page-header">
@@ -586,18 +509,16 @@ $down=$row['down'];
               <li><a class="mapMenu">Maps</a></li>
               <li><a href="#" class="adaBook">Book Galleries</a></li>
               <li><a class="new_tech">New Tech</a></li>
-              <li><a class="instagram">Instagram Contest!</a></li>
               <li><a class="news_and_notes">News & Events from the Library</a></li>
             </ul>-->
             <ul id="adaMenu" class="nav">
               <li><button class="btn btn-large mapMenu" type="button">Maps</button></li>
               <!--<li><button class="btn btn-large adaBook" type="button">Book Galleries</button></li>-->
               <li><button class="btn btn-large new_tech" type="button">New Tech</button></li>
-              <li><button class="btn btn-large instagram" type="button">Instagram Contest!</button></li>
               <li><button class="btn btn-large news_and_notes" type="button">News & Events from the Library</button></li>
               <li><button class="btn btn-large flickr" type="button">Historical Images of Miami U.</button></li>
               <li><button class="btn btn-large muishere adaMUIHMenu localResearch" type="button">Map of MU Research</button></li>
-              <li><button class="btn btn-large mystery" type="button">Mystery Man</button></li>
+              <!--<li><button class="btn btn-large mystery" type="button">Mystery Man</button></li>-->
               <li><button class="btn btn-large flickr-promotion" type="button">Cradle of Coaches</button></li>
  
             </ul> 
