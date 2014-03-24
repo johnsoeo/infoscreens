@@ -265,7 +265,7 @@ margin:5px;
     <button class="btn btn-large btn-inverse menuButton flickr">Historical Images of Miami U.</button>
     <button class="btn btn-large btn-inverse menuButton research muishere localResearch">Map of MU Research</button>
     <!--<button class="btn btn-large btn-inverse menuButton mystery">Mystery Person</button>-->
-    <button class="btn btn-large btn-inverse menuButton flickr-promotion">Cradle of Coaches</button>
+    <button class="btn btn-large btn-inverse menuButton flickr-promotion">Special Collections Exhibit</button>
 
 </div>
   
@@ -394,8 +394,8 @@ To get started, search for “BrowZine” in the app stores (Apple, Google, Amaz
 <div class="container">
   <div class="page-header">
     <img class="pull-right" src="files/img/social-media-icon-large.png" />
-    <h1>Cradle of Coaches <small>a Current Exhibit in the Walter Havighurst Special Collections</small></h1>
-    <p><em>Cradle of Coaches: A Legacy of Excellence</em> is a current exhibit upstairs on the third floor in the Walter Havighurst Special Collections.  The exhibit runs from 8/19 - 12/13. The exhibit features playbooks, photographs and visualizations of the Cradle of Coaches coaching trees.  Come experience the glory of the Cradle of Coaches! Also this year is the 125th anniversary of Miami's first game which was on 12/8/1888 against Cincinnati.  It ended in a 0-0 tie.</p>
+    <h1>For the Amusement of Youth <small>a Current Exhibit in the Walter Havighurst Special Collections</small></h1>
+    <p><em>For the Amusement of Youth</em> is a current exhibit upstairs on the third floor in the Walter Havighurst Special Collections.  The exhibit runs from 1/27 - 5/16. This exhibit traces the origins of today’s gaming industry, highlighting the products of the golden age of commercial game production in the United Kingdom, the United States, and beyond from the 1790s to the 1920s. Highlights of the exhibit include several hand-colored board games from England circa 1800, early games and puzzles produced by leading American game manufacturers, Milton Bradley, the McLoughlin Brothers, and the Parker Brothers, and an early French version of the popular magnetic fish pond game..</p>
 </div>
 <?php include '../flickr/flickr_presenter/flickr-cradle.php'; ?>
 </div>
@@ -519,7 +519,7 @@ To get started, search for “BrowZine” in the app stores (Apple, Google, Amaz
               <li><button class="btn btn-large flickr" type="button">Historical Images of Miami U.</button></li>
               <li><button class="btn btn-large muishere adaMUIHMenu localResearch" type="button">Map of MU Research</button></li>
               <!--<li><button class="btn btn-large mystery" type="button">Mystery Man</button></li>-->
-              <li><button class="btn btn-large flickr-promotion" type="button">Cradle of Coaches</button></li>
+              <li><button class="btn btn-large flickr-promotion" type="button">Special Collections Exhibit</button></li>
  
             </ul> 
             <ul id="adaBookMenu" class="nav nav-pills">
